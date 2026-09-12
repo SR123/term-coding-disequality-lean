@@ -12,7 +12,8 @@
     "lint": "oxlint",
     "format": "oxfmt",
     "typecheck": "tsc --noEmit",
-    "postbuild": "node scripts/static.mjs"
+    "postbuild": "node scripts/static.mjs",
+    "test": "node --experimental-strip-types --test tests/resource-loader.test.mjs"
   },
   "dependencies": {
     "@base-ui/react": "1.7.0",

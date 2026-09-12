@@ -28,3 +28,10 @@
 .history-math{white-space:nowrap}
 @media(max-width:620px){.authors-note{scroll-margin-top:1rem}.authors-note-text{padding-left:1rem}}
 @media print{.authors-note{display:none!important}}
+
+/* Failed proof requests recover in place, without closing the paper. */
+.resource-error{border:1px solid var(--border);border-radius:.5rem;padding:1rem;margin:1rem 0;}
+.resource-error p{margin:0 0 .75rem;}
+.resource-error button{border:1px solid currentColor;border-radius:.3rem;padding:.4rem .8rem;font:inherit;cursor:pointer;}
+.resource-error a{display:inline-block;margin:.5rem 0 .5rem 1rem;}
+.resource-error button:focus-visible{outline:2px solid currentColor;outline-offset:3px;}

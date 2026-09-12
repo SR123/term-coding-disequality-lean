@@ -31,6 +31,8 @@ jobs:
           fi
       - run: npm ci
         working-directory: site
+      - run: npm test
+        working-directory: site
       - run: npm run typecheck
         working-directory: site
       - run: npm run build

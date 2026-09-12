@@ -32,6 +32,8 @@ The browser is an inspection aid, not a replacement kernel. A successful Lean pr
 
 ## Read locally
 
+The website loads the Lean index, declarations, module sources and module proof steps on demand. Temporary loading failures are retried up to twice, with a 20-second deadline per attempt. If loading still fails, an explicit Retry control reloads that resource in place; the paper and selected explanation stay open. Requests are cancelled when navigating away, and only successful responses are retained for reuse. `npm test` in `site/` checks interrupted requests, server failures, timeouts, cancellation and retry behaviour. The Pages workflow runs these checks before building. These interface changes do not alter the manuscript, Lean source or proof exports.
+
 After `npm ci` and `npm run build` in `site/`, the static site is in `site/dist/client/`. Serve that directory over HTTP; opening `index.html` as a `file:` URL will not allow the JSON fetches.
 
 ```sh
