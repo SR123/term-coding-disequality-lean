@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this development, please cite the accompanying paper and this software release."
-title: "Lean verification and interactive proof companion to 'One Unit Separates Polynomial Time from Undecidability in Term Coding' (Paper 3)"
+title: "Lean verification and interactive proof companion to 'One Unit Separates Polynomial Time from Undecidability in Term Coding'"
 type: software
 authors:
   - family-names: Riis

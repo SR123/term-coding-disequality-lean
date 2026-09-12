@@ -1,0 +1,1 @@
+Revision 18 replaces internal paper numbers with ordinary citations. All 21 mathematical/proof environments are unchanged. These are editorial, typesetting, link and source-identity checks using existing proof records; no Lean elaboration or proof audit was rerun.

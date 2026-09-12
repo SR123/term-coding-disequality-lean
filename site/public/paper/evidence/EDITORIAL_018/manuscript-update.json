@@ -1,0 +1,11 @@
+{
+  "revision": 18,
+  "manuscriptSha256": "2e8017d1590b5eed254a330b530c0f543800717ccc4315ee3dd2a4f3d0ddaee3",
+  "previousManuscriptSha256": "ee233ec2bbb4465249c35d2e1120ed159ffd6c234b159f2f1bdf5a536149873c",
+  "mathematicalEnvironmentsUnchanged": 21,
+  "newLeanChecksRun": false,
+  "description": "Revision 18 replaces internal paper numbers in the introduction and closing discussion with bibliographic citations. All 21 mathematical/proof environments, the Lean source and the exported proof evidence are unchanged. No Lean checks were rerun.",
+  "doi": "10.5281/zenodo.22727895",
+  "github": "https://github.com/SR123/term-coding-disequality-lean",
+  "interactive": "https://sr123.github.io/term-coding-disequality-lean/"
+}

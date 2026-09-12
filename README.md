@@ -1,6 +1,6 @@
 # Term coding: Lean verification and interactive paper
 
-Companion to **One Unit Separates Polynomial Time from Undecidability in Term Coding**, by Søren Riis (Paper 3).
+Companion to **One Unit Separates Polynomial Time from Undecidability in Term Coding**, by Søren Riis.
 
 - [Read the interactive paper](https://sr123.github.io/term-coding-disequality-lean/).
 - [Read the manuscript PDF](paper/paper3.pdf).
@@ -10,7 +10,7 @@ Companion to **One Unit Separates Polynomial Time from Undecidability in Term Co
 
 The interactive edition contains the complete paper and 154 authored explanations. Click a paragraph to follow its argument into formal statements, hypotheses, Lean source, recorded proof states and exported kernel expressions. Click the title or “How this paper developed” for the author’s account of the early-2016 Paris visit, the work with Sol Pro and Astra Pro, and the human conceptual contributions concerning disequality constraints and the family of values of k.
 
-The current manuscript is revision 17 (12 September 2026). Cite the archived software release as [DOI: 10.5281/zenodo.22727895](https://doi.org/10.5281/zenodo.22727895). The immutable v1.0.0 archive precedes the addition of its own DOI to the manuscript; the current paper and live edition include these publication links. The Lean source and proof exports are unchanged. Publication uses the existing verification evidence; it does not claim a new or independently implemented kernel check.
+The current manuscript is revision 18 (12 September 2026). The introduction and closing discussion use bibliographic citations in place of internal paper numbers. Cite the archived software release as [DOI: 10.5281/zenodo.22727895](https://doi.org/10.5281/zenodo.22727895). The immutable v1.0.0 archive precedes the addition of its own DOI to the manuscript; the current paper and live edition include these publication links. The Lean source and proof exports are unchanged. Publication uses the existing verification evidence; it does not claim a new or independently implemented kernel check.
 
 ## What is checked
 
@@ -66,11 +66,11 @@ The live edition is served by GitHub Pages at the link above. The Pages workflow
 
 The website is built with `PAPER_BASE_PATH=/term-coding-disequality-lean`, so its assets work under this repository’s GitHub Pages address. A local root build should omit that variable.
 
-Software releases are archived through Zenodo, following papers 1 and 2. A version DOI identifies an archived software snapshot; the live interactive page may subsequently receive editorial updates. The final manuscript cites the archived release and the live page separately.
+Software releases are archived through Zenodo. A version DOI identifies an archived software snapshot; the live interactive page may subsequently receive editorial updates. The final manuscript cites the archived release and the live page separately.
 
 ## Licence and citation
 
-The project software is Apache-2.0, as in papers 1 and 2. See `LICENSE`, `NOTICE.md` and the third-party notices. Manuscript and historical-account licensing is separate. Please cite the paper and software release; `CITATION.cff` supplies the citation metadata.
+The project software is Apache-2.0. See `LICENSE`, `NOTICE.md` and the third-party notices. Manuscript and historical-account licensing is separate. Please cite the paper and software release; `CITATION.cff` supplies the citation metadata.
 
 ## File map
 

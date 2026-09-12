@@ -1,5 +1,5 @@
 {
-  "title": "Lean verification and interactive proof companion to 'One Unit Separates Polynomial Time from Undecidability in Term Coding' (Paper 3)",
+  "title": "Lean verification and interactive proof companion to 'One Unit Separates Polynomial Time from Undecidability in Term Coding'",
   "upload_type": "software",
   "creators": [
     {
@@ -7,7 +7,7 @@
       "affiliation": "Queen Mary University of London"
     }
   ],
-  "description": "<p>Lean 4.26 formalisation and an interactive edition of Paper 3. The companion connects the complete typeset paper to authored explanations, exact formal statements, Lean source, recorded proof states and exported proof expressions.</p><p>The 71-module development includes the two asymptotic limits and correctness and a uniform polynomial running-time theorem for one fixed logarithmic-cost RAM. The fixed-presentation finite-group noncomputability theorem is an explicit external hypothesis; the standard polynomial RAM-to-Turing-machine simulation is not formalised. Existing Lean build and audit records accompany the unchanged source. The browser is an inspection aid; correspondence with informal statements remains subject to mathematical review. No independent kernel implementation has checked the export.</p><p>Apache-2.0 applies to the project software. The manuscript, historical account and third-party material retain their respective licensing status as described in NOTICE.md.</p>",
+  "description": "<p>Lean 4.26 formalisation and an interactive edition of the accompanying article. The companion connects the complete typeset paper to authored explanations, exact formal statements, Lean source, recorded proof states and exported proof expressions.</p><p>The 71-module development includes the two asymptotic limits and correctness and a uniform polynomial running-time theorem for one fixed logarithmic-cost RAM. The fixed-presentation finite-group noncomputability theorem is an explicit external hypothesis; the standard polynomial RAM-to-Turing-machine simulation is not formalised. Existing Lean build and audit records accompany the unchanged source. The browser is an inspection aid; correspondence with informal statements remains subject to mathematical review. No independent kernel implementation has checked the export.</p><p>Apache-2.0 applies to the project software. The manuscript, historical account and third-party material retain their respective licensing status as described in NOTICE.md.</p>",
   "version": "1.0.0",
   "publication_date": "2026-09-12",
   "license": "Apache-2.0",
