@@ -1,0 +1,49 @@
+\begin{thebibliography}{1}
+
+\bibitem{BW}
+Martin~R. Bridson and Henry Wilton.
+\newblock The triviality problem for profinite completions.
+\newblock {\em Inventiones Mathematicae}, 202:839--874, 2015.
+\newblock arXiv:1401.2273; Theorem 2.1.
+
+\bibitem{Menger}
+Karl Menger.
+\newblock Zur allgemeinen kurventheorie.
+\newblock {\em Fundamenta Mathematicae}, 10:96--115, 1927.
+
+\bibitem{Omnibus}
+S{\o}ren Riis.
+\newblock Term coding for extremal combinatorics: Dispersion and complexity
+  dichotomies.
+\newblock \href{https://arxiv.org/abs/2504.16265v3}{arXiv:2504.16265v3}, 2025.
+\newblock Earlier omnibus; its square-bijectivity undecidability claim is
+  withdrawn in the present replacement.
+
+\bibitem{Paper1}
+S{\o}ren Riis.
+\newblock Term coding: An entropic framework for extremal combinatorics and the
+  guessing--number sandwich theorem.
+\newblock \href{https://arxiv.org/abs/2601.16614v2}{arXiv:2601.16614v2}, 2026.
+\newblock Revised 30 August 2026.
+
+\bibitem{Paper2}
+S{\o}ren Riis.
+\newblock Term coding and dispersion: Exact and asymptotic decision problems.
+\newblock \href{https://arxiv.org/abs/2602.08110v2}{arXiv:2602.08110v2}, 2026.
+\newblock Revised 1 September 2026.
+
+\bibitem{RG}
+S{\o}ren Riis and Maximilien Gadouleau.
+\newblock Max-flow min-cut theorems on dispersion and entropy measures for
+  communication networks.
+\newblock {\em Information and Computation}, 267:49--73, 2019.
+\newblock Preprint: arXiv:1012.5224.
+
+\bibitem{Slo}
+A.~M. Slobodskoi.
+\newblock Undecidability of the universal theory of finite groups.
+\newblock {\em Algebra i Logika}, 20(2):207--230, 1981.
+\newblock In Russian; English translation in Algebra and Logic 20 (1981),
+  139--156.
+
+\end{thebibliography}

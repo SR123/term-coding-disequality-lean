@@ -10,7 +10,7 @@ Companion to **One Unit Separates Polynomial Time from Undecidability in Term Co
 
 The interactive edition contains the complete paper and 154 authored explanations. Click a paragraph to follow its argument into formal statements, hypotheses, Lean source, recorded proof states and exported kernel expressions. Click the title or “How this paper developed” for the author’s account of the early-2016 Paris visit, the work with Sol Pro and Astra Pro, and the human conceptual contributions concerning disequality constraints and the family of values of k.
 
-The current manuscript is revision 16 (11 September 2026), with the historical account added to the interactive edition on 12 September. The Zenodo DOI will be added after the first software release has been archived. Publication uses the existing verification evidence; it does not claim a new or independently implemented kernel check.
+The current manuscript is revision 17 (12 September 2026). Cite the archived software release as [DOI: 10.5281/zenodo.22727895](https://doi.org/10.5281/zenodo.22727895). The immutable v1.0.0 archive precedes the addition of its own DOI to the manuscript; the current paper and live edition include these publication links. The Lean source and proof exports are unchanged. Publication uses the existing verification evidence; it does not claim a new or independently implemented kernel check.
 
 ## What is checked
 
@@ -32,7 +32,7 @@ The browser is an inspection aid, not a replacement kernel. A successful Lean pr
 
 ## Read locally
 
-The prepared static site is in `site/dist/client/`. Serve that directory over HTTP; opening `index.html` as a `file:` URL will not allow the JSON fetches.
+After `npm ci` and `npm run build` in `site/`, the static site is in `site/dist/client/`. Serve that directory over HTTP; opening `index.html` as a `file:` URL will not allow the JSON fetches.
 
 ```sh
 python3 -m http.server 8000 --directory site/dist/client

@@ -26,8 +26,11 @@ function prose(text){
     if(name==='_'){html+='_';continue;}
     if(name==='o'){html+='ø';continue;}
     if(name==='noindent'||name==='newblock')continue;
-    if(name==='PaperThreeLeanGitHub'){html+='<span class="publication-pending">[GitHub URL to be added]</span>';continue;}
-    if(name==='PaperThreeLeanDOI'){html+='<span class="publication-pending">[DOI to be added]</span>';continue;}
+    if(['PaperThreeLeanGitHub','PaperThreeLeanDOI','PaperThreeInteractive'].includes(name)){
+      const link=paper.publication?.[name];
+      if(!link || !/^https:\/\//.test(link.url)) throw Error('Missing permanent publication link: '+name);
+      html+=`<a href="${esc(link.url)}" target="_blank" rel="noreferrer">${esc(link.label)}</a>`;continue;
+    }
     let optional='';
     if(name==='cite'&&text[i]==='['){let end=text.indexOf(']',i);optional=text.slice(i+1,end);i=end+1;}
     if(['emph','textit','textbf','texttt','textsc','label','ref','eqref','cite','href','url','begin','end'].includes(name)){

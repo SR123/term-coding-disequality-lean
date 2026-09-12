@@ -1,7 +1,7 @@
 {
   "generatedUTC": "2026-09-11T09:33:34.972359+00:00",
   "draft": false,
-  "manuscriptSha256": "4250c995151a6acda486c8f00af941cf6bf0c14c3b7a8fa73cb40140cbdc7000",
+  "manuscriptSha256": "ee233ec2bbb4465249c35d2e1120ed159ffd6c234b159f2f1bdf5a536149873c",
   "leanVersion": "4.26.0",
   "mathlibCommit": "2df2f0150c275ad53cb3c90f7c98ec15a56a1a67",
   "stats": {
@@ -124,13 +124,21 @@
     "localChecks": "evidence/LOCAL_2026-09-11/check-report.json",
     "localAuditCommands": 6,
     "allLocalModulesElaborated": true,
-    "editorialChecks": "evidence/EDITORIAL_016/check-report.json"
+    "editorialChecks": "evidence/EDITORIAL_017/check-report.json"
   },
-  "editorialRevision": 16,
-  "manuscriptUpdatedUTC": "2026-09-11T11:02:10.357462+00:00",
+  "editorialRevision": 17,
+  "manuscriptUpdatedUTC": "2026-09-12T16:39:48.280441+00:00",
   "editorialChange": {
-    "description": "Revision 16 clarifies Example 1.2: the test x₁≠x₁ is deliberately impossible, excludes every assignment and gives zero dispersion. The interactive explanation links directly to `identical_test_dispersionTuple_zero`. The 71-module Lean source and all formal proof exports are unchanged from revision 15.",
-    "previousManuscriptSha256": "703c52525acd27af3b3ac245d6ce3db47b8f20bd6529609f26e520119e750be3",
+    "description": "Revision 17 adds the public GitHub repository, archived software DOI and live interactive-paper links. All 21 mathematical/proof environments, the 71-module Lean source and the formal proof exports are unchanged from revision 16. No new Lean verification was run for publication.",
+    "previousManuscriptSha256": "4250c995151a6acda486c8f00af941cf6bf0c14c3b7a8fa73cb40140cbdc7000",
     "formalSourceAndProofExportsUnchanged": true
+  },
+  "publication": {
+    "repository": "https://github.com/SR123/term-coding-disequality-lean",
+    "interactivePaper": "https://sr123.github.io/term-coding-disequality-lean/",
+    "versionDoi": "10.5281/zenodo.22727895",
+    "conceptDoi": "10.5281/zenodo.22727894",
+    "archivedTag": "v1.0.0",
+    "archivedCommit": "b88fb9c4d3902b3585627e7e20c75edf1f07bc7e"
   }
 }

@@ -1,8 +1,8 @@
 {
-  "manuscriptSha256": "4250c995151a6acda486c8f00af941cf6bf0c14c3b7a8fa73cb40140cbdc7000",
+  "manuscriptSha256": "ee233ec2bbb4465249c35d2e1120ed159ffd6c234b159f2f1bdf5a536149873c",
   "sourceIdentityManifest": "evidence/CLAUDE_SOURCE_IDENTITY.json",
   "status": "Authored correspondence supplied for mathematical review; not a kernel-certified translation.",
-  "prepared": "2026-09-11",
-  "editorialRevision": 16,
-  "reviewedChange": "Example 1.2 explicitly identifies the deliberately impossible test and its zero dispersion."
+  "prepared": "2026-09-12",
+  "editorialRevision": 17,
+  "reviewedChange": "Revision 17 adds the public GitHub repository, archived software DOI and live interactive-paper links. All 21 mathematical/proof environments, the 71-module Lean source and the formal proof exports are unchanged from revision 16. No new Lean verification was run for publication."
 }

@@ -46,7 +46,15 @@ bbl=(PDFBUILD/'paper3.bbl').read_text()
 bibliography=[]
 for key,raw in re.findall(r'\\bibitem\{([^}]+)\}(.*?)(?=\\bibitem|\\end\{thebibliography\})',bbl,re.S):
     bibliography.append({'id':key,'number':citations[key],'raw':raw.strip().replace(r'\newblock','')})
-data={'sourceHash':hashlib.sha256(source.encode()).hexdigest(),'abstract':abstract,'sections':sections,'labels':labels,'citations':citations,'bibliography':bibliography}
+# Keep the interactive publication links tied to the manuscript macros.
+publication={}
+for name in ['PaperThreeLeanGitHub','PaperThreeLeanDOI','PaperThreeInteractive']:
+    line=next(line for line in source.splitlines() if line.startswith('\\newcommand{\\'+name+'}'))
+    link=re.search(r'\\(?:url|href)\{([^}]+)\}',line)
+    if link:
+        label=re.search(r'\\texttt\{([^}]+)\}',line)
+        publication[name]={'url':link[1],'label':label[1] if label else link[1]}
+data={'publication':publication,'sourceHash':hashlib.sha256(source.encode()).hexdigest(),'abstract':abstract,'sections':sections,'labels':labels,'citations':citations,'bibliography':bibliography}
 (ROOT/'content/paper.json').write_text(json.dumps(data,ensure_ascii=False,indent=2))
 for section in sections:
     for b in section['blocks']:print(b['id'],b['heading'],re.sub(r'\s+',' ',b['raw'])[:120])

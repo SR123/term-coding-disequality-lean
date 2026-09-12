@@ -1,0 +1,1 @@
+Publication revision 17 adds permanent repository, software DOI and interactive-paper links. These checks concern manuscript correspondence, links, typesetting and identity of existing source and proof records. No new Lean elaboration or independent kernel check was run. All 21 mathematical/proof environments are unchanged.
