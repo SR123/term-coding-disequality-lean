@@ -11,5 +11,4 @@ site/.vinext/
 
 site/dist*/
 site/.sites-runtime/
-site/.openai/
 **/* [0-9].*
