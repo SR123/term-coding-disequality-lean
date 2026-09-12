@@ -1,0 +1,32 @@
+{
+  "MValid": {
+    "exit": 0,
+    "seconds": 15.68,
+    "sourceSha256": "11304dcd37cb76f280633e62ea1787f905079bb2278202aa24ee011ebd864974"
+  },
+  "MCanon": {
+    "exit": 0,
+    "seconds": 15.99,
+    "sourceSha256": "065d33fab20046ab36b241033cd938fb826b573a3d2489de1aeb49b68c54ee16"
+  },
+  "MNet": {
+    "exit": 0,
+    "seconds": 19.45,
+    "sourceSha256": "19fbbc362936d798391d81d84281f38770f9dc03191b319402cd6b3803ed726e"
+  },
+  "MFlow": {
+    "exit": 0,
+    "seconds": 18.06,
+    "sourceSha256": "bc63bd6fd6a235cef146ab199ed15d6c5a1ebbde0ab8cd2fb39e3ab6355fff1b"
+  },
+  "MMain": {
+    "exit": 0,
+    "seconds": 13.34,
+    "sourceSha256": "123e3d5297e3c8264070eb27e469466340f88c07babf59d315d306821698c7af"
+  },
+  "MExamples": {
+    "exit": 0,
+    "seconds": 26.75,
+    "sourceSha256": "77c6762e157fedf3fe49b68f25f38f831c9ee950df17d5397e6b01a068f68aeb"
+  }
+}

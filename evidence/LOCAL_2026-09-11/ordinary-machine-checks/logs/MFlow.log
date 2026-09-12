@@ -1,0 +1,12 @@
+MFlow.lean:130:34: warning: unused variable `hA`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+MFlow.lean:574:5: warning: unused variable `hV`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+MFlow.lean:606:47: warning: unused variable `m`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+MFlow.lean:606:49: warning: unused variable `m'`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`

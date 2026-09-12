@@ -1,0 +1,6 @@
+MMain.lean:307:16: warning: unused variable `n`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+
+ELABORATED MMain; exporting proof states
+EXPORTED MMain: 10352 info records

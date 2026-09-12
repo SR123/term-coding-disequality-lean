@@ -1,0 +1,583 @@
+{
+  "BuildList": {
+    "exit": 0,
+    "seconds": 1342.95,
+    "sourceSha256": "e46c1e4981f4024a5ea54f0540934a987cbb16b1d09304065bb9a817fc74ad6f",
+    "tactics": 501,
+    "references": 250,
+    "unresolvedInfo": 0
+  },
+  "Core": {
+    "exit": 0,
+    "seconds": 1344.46,
+    "sourceSha256": "4a44bb34cdec73ca8c8f16d68909f803b68d7f2d31e49b5bb5ac3db6280a88f9",
+    "tactics": 1244,
+    "references": 1884,
+    "unresolvedInfo": 0
+  },
+  "CostMonad": {
+    "exit": 0,
+    "seconds": 14.91,
+    "sourceSha256": "bb2625e68ff98c362e61a7964e18f75fd58dad9b0c1a08c9ebbd05a7f13d5317",
+    "tactics": 343,
+    "references": 971,
+    "unresolvedInfo": 0
+  },
+  "PresentationBridge": {
+    "exit": 0,
+    "seconds": 6.32,
+    "sourceSha256": "dc3a4b4d62a9641da4d8f2d0a7d6e521af5a9cd6da8b4c885127be67e063fe8c",
+    "tactics": 437,
+    "references": 656,
+    "unresolvedInfo": 0
+  },
+  "Threshold": {
+    "exit": 0,
+    "seconds": 6.72,
+    "sourceSha256": "38d884cced6d9341392615b8ebb81e83d8722fec732769e89a056aa5b112fe88",
+    "tactics": 462,
+    "references": 733,
+    "unresolvedInfo": 0
+  },
+  "Semantics": {
+    "exit": 0,
+    "seconds": 7.58,
+    "sourceSha256": "be476f6c50cba7e389e26468869ad6d4fb934448b02fc28038c5d5e1948826a5",
+    "tactics": 248,
+    "references": 690,
+    "unresolvedInfo": 0
+  },
+  "MengerTheorem": {
+    "exit": 0,
+    "seconds": 84.38,
+    "sourceSha256": "a4e8632bae165acfebcc43f3b9c3917d5d0fcea624b59defcc57901fff22158f",
+    "tactics": 3698,
+    "references": 3287,
+    "unresolvedInfo": 0,
+    "metadataExportRechecked": true
+  },
+  "CompilerBridge": {
+    "exit": 0,
+    "seconds": 7.98,
+    "sourceSha256": "cdfe19b3bc603619240e5e82a6e0147a8cdf5b8742e45e5c2150d95114b03ef2",
+    "tactics": 481,
+    "references": 1023,
+    "unresolvedInfo": 0
+  },
+  "Tagged": {
+    "exit": 0,
+    "seconds": 8.8,
+    "sourceSha256": "71c76ad071a0af50a8b1fe248a654cba04c1a7349e687a85cc3d5fa8368ac829",
+    "tactics": 1135,
+    "references": 2060,
+    "unresolvedInfo": 0
+  },
+  "EncodedSyntax": {
+    "exit": 0,
+    "seconds": 64.08,
+    "sourceSha256": "3b0aae9fcff8deb8d6634489ef77644ec84873fb91d9bfd9e8d3e65f6f3d2617",
+    "tactics": 4886,
+    "references": 5034,
+    "unresolvedInfo": 0,
+    "metadataExportRechecked": true
+  },
+  "Examples": {
+    "exit": 0,
+    "seconds": 8.62,
+    "sourceSha256": "b96009f68d604b44bbdb12fbb26e2ad4dc1f3b25db831d3c4ea81bcb8c93eada",
+    "tactics": 413,
+    "references": 661,
+    "unresolvedInfo": 0
+  },
+  "UnitFlow": {
+    "exit": 0,
+    "seconds": 115.54,
+    "sourceSha256": "cc47c1a8533d5a12a97b0db116577ae71c7f40c0012da9201c34d35d52d7c81d",
+    "tactics": 5656,
+    "references": 7177,
+    "unresolvedInfo": 0,
+    "metadataExportRechecked": true
+  },
+  "StrictAlgorithm": {
+    "exit": 0,
+    "seconds": 7.22,
+    "sourceSha256": "7a650faef8f95a12224a37fb001927acf69ae93777f027a1ed5ce1a5b686142a",
+    "tactics": 231,
+    "references": 321,
+    "unresolvedInfo": 0
+  },
+  "Transport": {
+    "exit": 0,
+    "seconds": 6.25,
+    "sourceSha256": "3ec38b03b4c554ba728624cb0f4756d0e61daa1f0b91a4ea1cd5a46aaa24d3d0",
+    "tactics": 298,
+    "references": 609,
+    "unresolvedInfo": 0
+  },
+  "EncodedExamples": {
+    "exit": 0,
+    "seconds": 6.73,
+    "sourceSha256": "afcb37e386c0a93f3ff40f86046c24b1a91b23e54628685b000966a1e0e42b89",
+    "tactics": 165,
+    "references": 1581,
+    "unresolvedInfo": 0
+  },
+  "Asymptotics": {
+    "exit": 0,
+    "seconds": 9.88,
+    "sourceSha256": "fad45d589b92f923dae8db9149cb0595faf89e19d6dc79a36a48892b3d7a2475",
+    "tactics": 1187,
+    "references": 2212,
+    "unresolvedInfo": 0
+  },
+  "Density": {
+    "exit": 0,
+    "seconds": 13.66,
+    "sourceSha256": "ace54a4d4c76f2e646c9f6312ef55c0bd4a8e5aa3ce6bdf64cdcd3a539ac8c3c",
+    "tactics": 2092,
+    "references": 3390,
+    "unresolvedInfo": 0
+  },
+  "EncodedCompiler": {
+    "exit": 0,
+    "seconds": 42.83,
+    "sourceSha256": "7318f583e7669a0bdbf3bee7c66ed77ab919c4bc5fdaeb7bdceec89e993f08b1",
+    "tactics": 2665,
+    "references": 4252,
+    "unresolvedInfo": 0,
+    "metadataExportRechecked": true
+  },
+  "CompilerExamples": {
+    "exit": 0,
+    "seconds": 10.98,
+    "sourceSha256": "413d229452eebef9db9e7d4598b36f18fc6ed13c6dd64fc5811d4000aaba5948",
+    "tactics": 299,
+    "references": 685,
+    "unresolvedInfo": 0
+  },
+  "EncodingCost": {
+    "exit": 0,
+    "seconds": 34.61,
+    "sourceSha256": "c11eb43ba0d04c88e12996613c252dbd314248fb133c41c62c8db3b63ec023c8",
+    "tactics": 4168,
+    "references": 6755,
+    "unresolvedInfo": 0,
+    "metadataExportRechecked": true
+  },
+  "EncodedComputable": {
+    "exit": 0,
+    "seconds": 10.21,
+    "sourceSha256": "b3436e84e31a32ba41716f75fd849298211fadf82f8d1c696893c4e5c8215aea",
+    "tactics": 394,
+    "references": 1415,
+    "unresolvedInfo": 0
+  },
+  "FiniteSearch": {
+    "exit": 0,
+    "seconds": 6.95,
+    "sourceSha256": "a86b052232e893f041db64adb1d69dc748cb9f65b37040295f4b25332c240f3c",
+    "tactics": 353,
+    "references": 618,
+    "unresolvedInfo": 0
+  },
+  "Flattening": {
+    "exit": 0,
+    "seconds": 7.78,
+    "sourceSha256": "b3c0733820d28d3a7f643c26956b564fd7ea5a2fb35549a28c6d6eb32ce344ff",
+    "tactics": 841,
+    "references": 870,
+    "unresolvedInfo": 0
+  },
+  "GeneralSemantics": {
+    "exit": 0,
+    "seconds": 8.05,
+    "sourceSha256": "cee65887326b93ce23205911052195a75c5d94b20929fe82c655cd94fa9274b4",
+    "tactics": 644,
+    "references": 1259,
+    "unresolvedInfo": 0
+  },
+  "Ram": {
+    "exit": 0,
+    "seconds": 9.14,
+    "sourceSha256": "58b43b1ba4f81a3209c022b5c6d602c10907917139e9a98f948a96145dc7249c",
+    "tactics": 1208,
+    "references": 2178,
+    "unresolvedInfo": 0
+  },
+  "ReducedWords": {
+    "exit": 0,
+    "seconds": 8.63,
+    "sourceSha256": "0bc13dfd05b4a74d1dd91c3c021b14758d2ca519bdd8e2df1841db11d97e7a0d",
+    "tactics": 948,
+    "references": 1460,
+    "unresolvedInfo": 0
+  },
+  "Machine": {
+    "exit": 0,
+    "seconds": 10.9,
+    "sourceSha256": "b71e3dfd34b56c5fd009933db21712cd5db9ccbdd3f88e38bb2c6594ce0996b7",
+    "tactics": 1111,
+    "references": 1620,
+    "unresolvedInfo": 0
+  },
+  "Semidecision": {
+    "exit": 0,
+    "seconds": 7.68,
+    "sourceSha256": "e627d164a6e133db1c909bd86eff868f0b151d02ebdbec48fe1a76de9e9702b8",
+    "tactics": 299,
+    "references": 439,
+    "unresolvedInfo": 0
+  },
+  "TermGraph": {
+    "exit": 0,
+    "seconds": 7.37,
+    "sourceSha256": "36d0388f8f6285b403e3af6d9318c5e3420acf0aa962d16209ee11f72d6c9c88",
+    "tactics": 346,
+    "references": 1303,
+    "unresolvedInfo": 0
+  },
+  "MachineLib": {
+    "exit": 0,
+    "seconds": 9.78,
+    "sourceSha256": "f0bb65b679a3ea641fabaca9a2f20578d99487834a5299fd4c6d82bc28b1d397",
+    "tactics": 927,
+    "references": 1319,
+    "unresolvedInfo": 0
+  },
+  "ToyExample": {
+    "exit": 0,
+    "seconds": 10.97,
+    "sourceSha256": "0d59263370fb9b9140f64b03a385db390d6ad233bf1f8aa31a5c842c8e01c630",
+    "tactics": 623,
+    "references": 629,
+    "unresolvedInfo": 0
+  },
+  "SharpCut": {
+    "exit": 0,
+    "seconds": 13.78,
+    "sourceSha256": "b5e8f1d9ff55f089c02f3050a0f17e6ffc62134d13035a373d2a8da084e60bf5",
+    "tactics": 1324,
+    "references": 2089,
+    "unresolvedInfo": 0
+  },
+  "FinalInterface": {
+    "exit": 0,
+    "seconds": 9.11,
+    "sourceSha256": "c257013ea2e738cc49cde772c9fc4145b9a8005af7bd05225b29643fdaec2a8a",
+    "tactics": 112,
+    "references": 649,
+    "unresolvedInfo": 0
+  },
+  "GeneralRouting": {
+    "exit": 0,
+    "seconds": 10.24,
+    "sourceSha256": "363777339b72683319ba013341097e8e4aed7054adcf894f55480fcc71e7cd8e",
+    "tactics": 1209,
+    "references": 1866,
+    "unresolvedInfo": 0
+  },
+  "DegreeThreshold": {
+    "exit": 0,
+    "seconds": 9.49,
+    "sourceSha256": "33a5838ffb220dcfcfda37413b5949575036626e70785edf3300ac1ffb0b4923",
+    "tactics": 983,
+    "references": 1519,
+    "unresolvedInfo": 0
+  },
+  "UnitFlowCost": {
+    "exit": 0,
+    "seconds": 30.14,
+    "sourceSha256": "89474003af87db049352e5e5793f961313fcff58a19c505d903629e582d61af9",
+    "tactics": 1643,
+    "references": 3995,
+    "unresolvedInfo": 0,
+    "metadataExportRechecked": true
+  },
+  "Padding": {
+    "exit": 0,
+    "seconds": 9.45,
+    "sourceSha256": "9e60a4e1d95e3851fe703a49d5075d4b309a4f3feac6e76d7971862f7ccda960",
+    "tactics": 894,
+    "references": 1187,
+    "unresolvedInfo": 0
+  },
+  "GeneralEncoded": {
+    "exit": 0,
+    "seconds": 10.11,
+    "sourceSha256": "d86c8fcb6c53e2cdc666a941753f16d30b5960bd973379902c318a1d858f05d6",
+    "tactics": 1047,
+    "references": 1450,
+    "unresolvedInfo": 0
+  },
+  "TermMenger": {
+    "exit": 0,
+    "seconds": 15.21,
+    "sourceSha256": "bc6c3791f613d9776bb7ceb8d592ef730ed29639ac3d5add31ff7dfd1d8c0aef",
+    "tactics": 1456,
+    "references": 1663,
+    "unresolvedInfo": 0
+  },
+  "DegreeCompiler": {
+    "exit": 0,
+    "seconds": 28.14,
+    "sourceSha256": "341d35e484432ad832bb80ebafefed46bf544eb66479c4a2bbbdf3556325fec9",
+    "tactics": 1851,
+    "references": 2402,
+    "unresolvedInfo": 0
+  },
+  "TableSearch": {
+    "exit": 0,
+    "seconds": 29.95,
+    "sourceSha256": "1cbfe179c6c63a9bf7470855de49c47f7d50db04a14a15f6ea4b307bf6c5f0e6",
+    "tactics": 2482,
+    "references": 2932,
+    "unresolvedInfo": 0
+  },
+  "GeneralAlgorithm": {
+    "exit": 0,
+    "seconds": 36.08,
+    "sourceSha256": "0956ac29f3652ee7cc87a82cc9dafc90f4b11eb0b8afbeda7ba653548056b1d1",
+    "tactics": 2692,
+    "references": 2520,
+    "unresolvedInfo": 0,
+    "metadataExportRechecked": true
+  },
+  "GeneralAsymptotics": {
+    "exit": 0,
+    "seconds": 0,
+    "sourceSha256": "3f6aa05dd9fbd9f6b2518c63d6b3212d56ab9b74408ce065864318a41d25ee18",
+    "tactics": 3157,
+    "references": 4966,
+    "unresolvedInfo": 0,
+    "metadataExportRechecked": true
+  },
+  "GeneralExamples": {
+    "exit": 0,
+    "seconds": 11.0,
+    "sourceSha256": "6d8a102f719d8047ef5a5ef7c8888683d6353138297fd41aac1c6068992db3bd",
+    "tactics": 2049,
+    "references": 2463,
+    "unresolvedInfo": 0
+  },
+  "TableSearchComputable": {
+    "exit": 0,
+    "seconds": 23.57,
+    "sourceSha256": "27129e54155dd620e94513570794ea2cb197dec8559e9ca1f51986967910ee2a",
+    "tactics": 1688,
+    "references": 5473,
+    "unresolvedInfo": 0
+  },
+  "TupleFlattening": {
+    "exit": 0,
+    "seconds": 7.2,
+    "sourceSha256": "5a23cc35b07f73a65ef690a1a79ebf4b3626d77990fc275c24a6d350589b633e",
+    "tactics": 280,
+    "references": 431,
+    "unresolvedInfo": 0
+  },
+  "GeneralComputable": {
+    "exit": 0,
+    "seconds": 11.97,
+    "sourceSha256": "3cf2def3c143bbf16fca2ff315217521a6cbef8d6b55baf39f83040c6a442c96",
+    "tactics": 1238,
+    "references": 3906,
+    "unresolvedInfo": 0
+  },
+  "GeneralSemidecision": {
+    "exit": 0,
+    "seconds": 12.81,
+    "sourceSha256": "3fe071c3b1ff8e3d98ae67bd264ce1e62079f72cd86514245d0895496c77dd4b",
+    "tactics": 511,
+    "references": 662,
+    "unresolvedInfo": 0
+  },
+  "UnitFlowExec": {
+    "exit": 0,
+    "seconds": 12.0,
+    "sourceSha256": "d83b51752f3e15c7ee94b69710cf0da50fef6b3d31303d6355acd33d7948a5f7",
+    "tactics": 928,
+    "references": 2997,
+    "unresolvedInfo": 0
+  },
+  "WitnessSize": {
+    "exit": 0,
+    "seconds": 11.1,
+    "sourceSha256": "61a8847bce8645d1df3e80730d91583c8f179ddfa740aa2360c680e8c9a0d710",
+    "tactics": 225,
+    "references": 741,
+    "unresolvedInfo": 0
+  },
+  "FlowCut": {
+    "exit": 0,
+    "seconds": 77.16,
+    "sourceSha256": "2a80a8904986a8da94c8cce30617dec1d30febc00c59db87225683898dbd693e",
+    "tactics": 4998,
+    "references": 5946,
+    "unresolvedInfo": 0,
+    "metadataExportRechecked": true
+  },
+  "FlowCost": {
+    "exit": 0,
+    "seconds": 91.42,
+    "sourceSha256": "f3aa7b1dcbf44d664fd30785dfb351c66ec556ea0bb7a090e69181415ff7f17f",
+    "tactics": 4724,
+    "references": 7810,
+    "unresolvedInfo": 0,
+    "metadataExportRechecked": true
+  },
+  "PhaseAExec": {
+    "exit": 0,
+    "seconds": 30.62,
+    "sourceSha256": "4471b8a5aaa0f02d4ada0db3f4acaeebd448f234728d2f6d89cddeda861b62f9",
+    "tactics": 994,
+    "references": 3687,
+    "unresolvedInfo": 0
+  },
+  "Parsing": {
+    "exit": 0,
+    "seconds": 31.32,
+    "sourceSha256": "24b485da7f70ec18f64368ce894701bea96694110330b3b402638a5b22c72a4c",
+    "tactics": 2426,
+    "references": 2980,
+    "unresolvedInfo": 0
+  },
+  "ParsingCost": {
+    "exit": 0,
+    "seconds": 56.1,
+    "sourceSha256": "c40896f36dded6c3a71d031d0cb84c68253199f2c6cf7ccc4a54ab96ad9d7e8f",
+    "tactics": 3714,
+    "references": 4424,
+    "unresolvedInfo": 0,
+    "metadataExportRechecked": true
+  },
+  "ParsingExec": {
+    "exit": 0,
+    "seconds": 25.97,
+    "sourceSha256": "a484596411bee6e38c134965cde76b5b0a78085806254f58050a2ac36e876b43",
+    "tactics": 491,
+    "references": 2957,
+    "unresolvedInfo": 0
+  },
+  "MParse": {
+    "exit": 0,
+    "seconds": 182.11,
+    "sourceSha256": "9c5a030a9a15dc3253c06eba6cd438b23fc2c79a20b193b7fe88ab6b58bd1b17",
+    "tactics": 8511,
+    "references": 6127,
+    "unresolvedInfo": 0,
+    "metadataExportRechecked": true
+  },
+  "FlowCutExec": {
+    "exit": 0,
+    "seconds": 26.6,
+    "sourceSha256": "bcd633db2ef34658d47313814970df83f50fda23288e463aefc122d05a96eccb",
+    "tactics": 1037,
+    "references": 4184,
+    "unresolvedInfo": 0
+  },
+  "FlowExamples": {
+    "exit": 0,
+    "seconds": 24.54,
+    "sourceSha256": "5d521e2713d3309b51a93d09d52c2e5db07c987ae4140a187ec9542791cea123",
+    "tactics": 235,
+    "references": 438,
+    "unresolvedInfo": 0
+  },
+  "GeneralInterface": {
+    "exit": 0,
+    "seconds": 21.09,
+    "sourceSha256": "7b8a99b8088ba1443e89c0de7ee2c82b100ffd895e209b9aaf507231726d708a",
+    "tactics": 17,
+    "references": 893,
+    "unresolvedInfo": 0
+  },
+  "MParseList": {
+    "exit": 0,
+    "seconds": 432.14,
+    "sourceSha256": "c5992ce988c9875436fda461f8f49f4793c3190ce3e8fd9eb13d57e8b4d3cb19",
+    "tactics": 13970,
+    "references": 12440,
+    "unresolvedInfo": 0,
+    "metadataExportRechecked": true
+  },
+  "MLib": {
+    "exit": 0,
+    "seconds": 905.92,
+    "sourceSha256": "37ab2b242a62883c03c073e62a9a25c907f8d4a1fa99b535fdee26292d04c2e7",
+    "tactics": 35879,
+    "references": 41810,
+    "unresolvedInfo": 0
+  },
+  "MParseRec": {
+    "exit": 0,
+    "seconds": 181.65,
+    "sourceSha256": "41a14eb99c40aa1a70165f07e5678abda8ae325b3175215fee865ad1889857ed",
+    "tactics": 10307,
+    "references": 12580,
+    "unresolvedInfo": 0
+  },
+  "MLib2": {
+    "exit": 0,
+    "seconds": 911.82,
+    "sourceSha256": "4ecb6ccb5b55305fb6aafe5edcd61be1df6758ef5c11fd98696b2f1c8f89ec41",
+    "tactics": 36956,
+    "references": 42063,
+    "unresolvedInfo": 0
+  },
+  "MLib3": {
+    "exit": 0,
+    "seconds": 76.83,
+    "sourceSha256": "9975e5bd7d048a39620f9751fde8ca9e81bf5b5dbc5a962dc855d6b9bafece2e",
+    "tactics": 5042,
+    "references": 9021,
+    "unresolvedInfo": 0
+  },
+  "MValid": {
+    "exit": 0,
+    "seconds": 593.95,
+    "sourceSha256": "11304dcd37cb76f280633e62ea1787f905079bb2278202aa24ee011ebd864974",
+    "tactics": 30163,
+    "references": 47067,
+    "unresolvedInfo": 0
+  },
+  "MCanon": {
+    "exit": 0,
+    "seconds": 628.64,
+    "sourceSha256": "065d33fab20046ab36b241033cd938fb826b573a3d2489de1aeb49b68c54ee16",
+    "tactics": 27902,
+    "references": 37405,
+    "unresolvedInfo": 0
+  },
+  "MMain": {
+    "exit": 0,
+    "seconds": 58.79,
+    "sourceSha256": "123e3d5297e3c8264070eb27e469466340f88c07babf59d315d306821698c7af",
+    "tactics": 3874,
+    "references": 6478,
+    "unresolvedInfo": 0
+  },
+  "MExamples": {
+    "exit": 0,
+    "seconds": 58.85,
+    "sourceSha256": "77c6762e157fedf3fe49b68f25f38f831c9ee950df17d5397e6b01a068f68aeb",
+    "tactics": 1654,
+    "references": 2606,
+    "unresolvedInfo": 0
+  },
+  "MNet": {
+    "exit": 0,
+    "seconds": 460.36,
+    "sourceSha256": "19fbbc362936d798391d81d84281f38770f9dc03191b319402cd6b3803ed726e",
+    "tactics": 39145,
+    "references": 62994,
+    "unresolvedInfo": 0
+  },
+  "MFlow": {
+    "exit": 0,
+    "seconds": 495.01,
+    "sourceSha256": "bc63bd6fd6a235cef146ab199ed15d6c5a1ebbde0ab8cd2fb39e3ab6355fff1b",
+    "tactics": 39754,
+    "references": 72288,
+    "unresolvedInfo": 0
+  }
+}

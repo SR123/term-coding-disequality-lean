@@ -1,0 +1,9 @@
+# Independent local verification — 11 September 2026
+
+All 71 mathematical/algorithmic modules were elaborated from Claude's unchanged source with the pinned Lean 4.26 toolchain and Mathlib dependency. Six audit/type commands were then run against these local modules. Logs include harmless linter warnings where Lean emitted them; elaboration errors, information-tree holes, admissions and missing proof dependencies are rejected by the release checks.
+
+The trace exporter waits for elaboration tasks, resolves their information trees and uses enlarged resource budgets for documentation. It resets the accumulated heartbeat counter before exporting suggestion metadata, after checking and tracing. An immutable-snapshot cache avoids repeated pretty-printing. Metavariable-free goals can share the display for their unchanged declaration; other goals use the complete metavariable snapshot. The Core and MLib3 equivalence checks compare recorded text, spans and references against the earlier exporters. This tooling is never imported by the proof project.
+
+The kernel-export log preserves preliminary documentation attempts, including an incomplete local IR cache and the initial treatment of temporary unnamed-example markers. The final successful export and closure checks govern this release. These documentation issues were resolved without changing Claude's formal source or admitting any proof.
+
+The check report also verifies the manuscript correspondence targets, full dependency closure, unchanged source hashes, every mathematical expression node's well-founded structure and closed binders, and the three standard foundational axioms. English explanations and paper-to-statement correspondence remain authored material for mathematical review. The external finite-group theorem is an explicit hypothesis; RAM-to-Turing-machine simulation remains unformalised.

@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "sections": 8,
+  "paragraphs": 72,
+  "abstract": true,
+  "bibliographyEntries": 7,
+  "reachableExplanations": 154,
+  "formalCorrespondenceLinks": 174,
+  "leanModules": 71,
+  "claudeFilesUnchanged": 80,
+  "auditCommands": 6,
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "proofStats": {
+    "declarations": 35308,
+    "projectDeclarations": 8966,
+    "modules": 71,
+    "libraryModules": 951,
+    "tactics": 335865,
+    "moduleLevelTactics": 175,
+    "sourceReferences": 487450,
+    "checkedUnnamedExamples": 35,
+    "expressionNodes": 9320605,
+    "sourceRanges": 21487,
+    "explanations": 154
+  },
+  "manuscriptSha256": "703c52525acd27af3b3ac245d6ce3db47b8f20bd6529609f26e520119e750be3",
+  "typescript": "Run separately with npm run typecheck",
+  "staticBuild": "Run separately with npm run build"
+}

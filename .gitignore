@@ -1,0 +1,15 @@
+build/
+Lean/.lake/
+site/node_modules/
+site/dist/
+site/.next/
+site/.wrangler/
+site/*.tsbuildinfo
+.DS_Store
+__pycache__/
+site/.vinext/
+
+site/dist*/
+site/.sites-runtime/
+site/.openai/
+**/* [0-9].*

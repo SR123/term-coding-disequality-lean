@@ -1,0 +1,741 @@
+{
+  "sourceHash": "4250c995151a6acda486c8f00af941cf6bf0c14c3b7a8fa73cb40140cbdc7000",
+  "abstract": "Term coding provides a common algebraic framework for network coding,\nindex coding and problems in extremal combinatorics. We exhibit a\ndecision problem in which lowering an output threshold by just one\nchanges the complexity from polynomial time to undecidability: no\nalgorithm then halts with the correct answer on every input.\nThe problem concerns dispersion, the maximum number of distinct output\ntuples obtainable by interpreting the function symbols in a tuple of\nterms on a finite alphabet. We restrict inputs by inequalities between\nterms and ask whether a given instance meets a prescribed output\nthreshold for some alphabet size at least two. Both thresholds are\nconsidered on the same class of instances.\nA machine-checked Lean development accompanies the paper\n(GitHub: \\PaperThreeLeanGitHub; DOI: \\PaperThreeLeanDOI);\nSection~\\ref{sec:open} specifies its external input and verification limits.",
+  "sections": [
+    {
+      "number": 1,
+      "title": "Two decision problems with adjacent thresholds",
+      "blocks": [
+        {
+          "id": "s1-1",
+          "raw": "An expression such as $f(g(x),y)$ becomes a function of $x,y$ once a set\n$A$ and functions $g:A\\to A$ and $f:A^2\\to A$ are chosen. We call such\nexpressions \\emph{terms}, and the choice of functions an\n\\emph{interpretation}. Every occurrence of a symbol uses the same\nfunction: for example, $g(g(x))$ means that this function is applied\ntwice. A tuple of terms in variables $x_1,\\ldots,x_m$ defines a map\nfrom $A^m$ to $A^r$, where $r$ is the number of terms in the tuple.\nWe restrict its domain by requiring finitely many inequalities\n$u\\ne v$ between terms. Such inequalities are also called\n\\emph{disequalities} or \\emph{tests}.",
+          "heading": "",
+          "kind": "paragraph",
+          "labels": []
+        },
+        {
+          "id": "s1-2",
+          "raw": "An instance $\\Gamma$ specifies the variables, function symbols and their\narities, output terms, and tests. For each $n\\ge1$, let $D_\\Gamma(n)$\nbe the maximum number of distinct output tuples obtained from inputs\nsatisfying all tests, as the interpreting functions on\n$[n]=\\{0,\\ldots,n-1\\}$ vary. This maximum is called the\n\\emph{dispersion}. It counts output tuples, not satisfying input tuples:\ndifferent inputs can give the same output. The finite set on which the\nfunctions act is also called the \\emph{alphabet}. The instance specifies\nneither its size nor any of the interpreting functions.\nSection~\\ref{sec:language} gives the formal definitions.",
+          "heading": "",
+          "kind": "paragraph",
+          "labels": []
+        },
+        {
+          "id": "s1-3",
+          "raw": "Let $\\mathcal C$ consist of all instances with a finite set $X$ of\nvariables containing distinct variables $x,y$, output tuple\n\\[\n (x,y,t_3,\\ldots,t_r),\\qquad r\\ge2,\n\\]\nand a finite list of tests that includes $x\\ne y$. The remaining output\nterms may use any variables in $X$ and may repeat. All variables, symbols,\nterms and tests are explicitly listed in the input. The class\n$\\mathcal C$ does not depend on the integer $k$ used below; in particular,\nthe numbers of variables and outputs need not equal $k$.",
+          "heading": "",
+          "kind": "paragraph",
+          "labels": []
+        },
+        {
+          "id": "s1-4",
+          "raw": "For $k\\ge2$, put\n\\[\n b_k(n)=n^k-n^{k-1}=n^{k-1}(n-1).\n\\]\nThis is the number of $k$-tuples in $[n]^k$ whose first two coordinates\ndiffer. We compare two questions about an input $\\Gamma\\in\\mathcal C$:\ndoes $D_\\Gamma(n)\\ge b_k(n)$ hold for some $n\\ge2$, and does\n$D_\\Gamma(n)\\ge b_k(n)+1$ hold for some $n\\ge2$? Both quantify over\nthe same possible sizes of the finite set. The second question asks for\njust one more output tuple, but admits a polynomial-time algorithm,\nwhereas the first is undecidable.",
+          "heading": "",
+          "kind": "paragraph",
+          "labels": []
+        },
+        {
+          "id": "s1-5",
+          "raw": "The algorithm uses a graph determined by the terms. Its vertices are\nthe distinct subterms, together with all declared variables; an edge\nruns from an immediate argument to the term containing it. This is a\ndirected acyclic graph. A \\emph{term cut} is a set of vertices meeting\nevery directed path from a variable to an output term. Paths of length\nzero are included, and a cut may contain variables or output terms.\nLet $\\rho_\\Gamma$ be the minimum size of such a cut. Every cut for an\ninstance in $\\mathcal C$ contains $x,y$, since each is both a variable\nand an output. Thus $\\rho_\\Gamma\\ge2$.",
+          "heading": "",
+          "kind": "paragraph",
+          "labels": []
+        },
+        {
+          "id": "s1-6",
+          "raw": "\\label{thm:main}\nFor every fixed integer $k\\ge2$, the following decision problems on\n$\\mathcal C$ have the indicated complexities:\n\\[\n\\begin{array}{lll}\n \\text{input: }\\Gamma\\in\\mathcal C&\n \\exists n\\ge2:\\ D_\\Gamma(n)\\ge b_k(n)&\\text{undecidable},\\\\[2pt]\n \\text{input: }\\Gamma\\in\\mathcal C&\n \\exists n\\ge2:\\ D_\\Gamma(n)\\ge b_k(n)+1&\\text{polynomial time}.\n\\end{array}\n\\]\nThe second answer is yes if and only if no test has syntactically\nidentical sides and $\\rho_\\Gamma\\ge k+1$. This criterion can also be\ndecided in polynomial time when $k\\ge2$ is part of the input, written\nin binary. If it holds, and $s$ is the number of distinct subterms in\nthe outputs and tests together with all declared variables, then\n\\[\n D_\\Gamma(n)\\ge\\lfloor n/s\\rfloor^{k+1}\\quad(n\\ge s).\n\\]\nIn particular, whenever the criterion holds, the strict threshold is\nattained at the alphabet size $n_0=s^{k+1}$.\nFor every fixed $k$, the first problem remains undecidable on the\nsubclass with $\\rho_\\Gamma=k$, where $D_\\Gamma(n)\\le b_k(n)$ for all\n$n\\ge2$. There is no total computable function $B$ such that every\npositive instance in this subclass, of input length $N$, has a size\n$n$ with $2\\le n\\le B(N)$ and $D_\\Gamma(n)=b_k(n)$.",
+          "heading": "Theorem 1.1. The one-unit difference in complexity.",
+          "kind": "theorem",
+          "labels": [
+            "thm:main"
+          ]
+        },
+        {
+          "id": "s1-7",
+          "raw": "We call the two inequalities in the theorem the \\emph{non-strict} and\n\\emph{strict} thresholds, respectively: since $D_\\Gamma(n)$ is an\ninteger, the second is equivalent to $D_\\Gamma(n)>b_k(n)$.\nFor fixed $k$, the sufficient size $s^{k+1}$ is polynomial in $s$.\nWhen $k$ varies, its value need not be polynomial, but its binary\nrepresentation is still short. On a positive strict instance,\n$k+1\\le\\rho_\\Gamma\\le s$, so it has at most\n$s(\\lfloor\\log_2 s\\rfloor+1)$ bits. This bounds the length of the\ninteger specifying a sufficient alphabet size; it does not assert that\nall entries of functions of arbitrary arity can be listed in polynomial\ntime.",
+          "heading": "",
+          "kind": "paragraph",
+          "labels": []
+        },
+        {
+          "id": "s1-8",
+          "raw": "For outputs $(x,y)$, the test $x\\ne y$ allows at most $n(n-1)$ outputs.\nAchieving this number means that every pair $(a,b)$ with $a\\ne b$\nsatisfies every test. In particular, if a further test is $F(x)\\ne y$,\nthen $F(a)=a$ for every $a$: otherwise the pair $(a,F(a))$ would fail.\nWe refer to equality with this upper bound as \\emph{saturation}.\nApplying this observation to terms expressing inverse and relator laws\nforces them to hold on the whole finite set. Section~\\ref{sec:reduction}\nuses it to encode the following undecidable problem for one fixed\nfinitely presented group: given a word, does it have nonidentity image\nin some finite quotient? The external group-theoretic result is\n\\cite[Theorem 2.1]{BW}. Only the term representing the input word varies;\nthe unary symbols and the number of tests are fixed.\nAdding $k-2$ new variables as further outputs, with no tests involving\nthem, multiplies the image size by $n^{k-2}$ and proves the other degrees.",
+          "heading": "Why all output pairs force identities.",
+          "kind": "paragraph",
+          "labels": []
+        },
+        {
+          "id": "s1-9",
+          "raw": "Riis and Gadouleau \\cite{RG} proved that ordinary dispersion, without\ntests, has growth exponent equal to the minimum term cut. Their lower\nbound transmits independent values along disjoint paths in the term\ngraph. Each transmitted value is accompanied by a label identifying\nits subterm, so that different uses of a symbol can be handled by one\nfunction. This construction is called \\emph{routing}.\nSection~\\ref{sec:routing} shows that the same labels satisfy every test\nwhose sides are syntactically different. It also proves the sharper\nupper bound\n\\[\n D_\\Gamma(n)\\le n^{\\rho_\\Gamma}-n^{\\rho_\\Gamma-1}\n \\qquad(\\Gamma\\in\\mathcal C),\n\\]\nbecause every cut contains the output variables $x,y$, whose values\nmust differ. These two bounds give the strict decision criterion.\nThe reduction uses the new identity-forcing argument above; it does\nnot follow from the earlier asymptotic theorem.",
+          "heading": "The cut bound and earlier routing work.",
+          "kind": "paragraph",
+          "labels": []
+        },
+        {
+          "id": "s1-10",
+          "raw": "For the two-variable instance associated to a fixed presentation $G$\nand a word $w$, write $D_{G,w}(n)$ for the dispersion.\nFor every nonempty word $w$, Section~\\ref{sec:near} constructs functions\nsatisfying\n\\[\n n(n-1)-Mn\\le D_{G,w}(n)\\le n(n-1)\\qquad(n>|w|),\n\\]\nwhere $|w|$ counts the letters as written and $M$ depends only on the\npresentation. Given $w$ and a positive rational $\\varepsilon$, the\nconstruction computes an integer $n\\ge2$ and unary functions for which\nthe allowed output image contains at least $(1-\\varepsilon)n(n-1)$ pairs. It works even\nfor words for which equality with $n(n-1)$ is impossible at every size.\nThus arbitrarily accurate proportions of this upper bound, with\ncomputable witnesses, do not decide whether the bound can be reached.\nThe reason is concrete: each failed identity at a point excludes at\nmost one further second coordinate. At most $Mn$ pairs are lost, a\nvanishing proportion of $n(n-1)$, whereas losing no pair forces every\nidentity to hold everywhere. The approximate constructions need not\nsatisfy the group laws.",
+          "heading": "Approaching the upper bound by explicit functions.",
+          "kind": "paragraph",
+          "labels": []
+        },
+        {
+          "id": "s1-11",
+          "raw": "\\label{ex:nonvacuity}\nFix $k\\ge2$, variables $x_1,\\ldots,x_{k+1}$, and only the test\n$x_1\\ne x_2$. The output tuple $(x_1,\\ldots,x_{k+1})$ has\n$b_{k+1}(n)$ distinct outputs and exceeds $b_k(n)+1$ already at $n=2$.\nWith the same variables, test and number of output coordinates, the\ntuple $(x_1,\\ldots,x_k,x_1)$ instead has exactly $b_k(n)$ outputs.\nIt gives a no answer to the strict question and a yes answer to the\nnon-strict question. Adding the deliberately impossible test $x_1\\ne x_1$\nexcludes every assignment and gives $D_\\Gamma(n)=0$, so both questions\nhave answer ``no''.\nFor $k=2$, the first two examples are $(x,y,z)$ with\n$D(n)=n^2(n-1)$ and $(x,y,x)$ with $D(n)=n(n-1)$.",
+          "heading": "Example 1.2. Both answers occur at every degree.",
+          "kind": "example",
+          "labels": [
+            "ex:nonvacuity"
+          ]
+        },
+        {
+          "id": "s1-12",
+          "raw": "The strict positive instances form a subset of the non-strict positive\ninstances; there is no contradiction in the subset being easier to\nrecognise. Also $b_k(n)+1<b_{k+1}(n)$ for every $n\\ge2$.\nAs $k$ increases, the undecidable thresholds therefore alternate with\nthe polynomial-time thresholds. The input class remains $\\mathcal C$\nthroughout.",
+          "heading": "",
+          "kind": "paragraph",
+          "labels": []
+        },
+        {
+          "id": "s1-13",
+          "raw": "This paper is intended to replace \\emph{Term Coding for Extremal\nCombinatorics: Dispersion and Complexity Dichotomies}, arXiv:2504.16265\n\\cite{Omnibus}. That work has been divided into focused papers.\nThe entropic framework and guessing-number sandwich theorem are now in\nPaper~1 \\cite{Paper1}; ordinary dispersion and its exact and asymptotic\ndecision problems are in Paper~2 \\cite{Paper2}.\nVersions~1--3 of the earlier omnibus asserted undecidability of finite\nsquare term bijectivity, the existence of an interpretation making a\ntuple of $k$ terms in $k$ variables a bijection on $A^k$ for some finite\n$A$ with $|A|\\ge2$. The proposed Horn-clause reduction in Appendix~A\nof v1 did not establish the required forcing properties, and the\nmachine-simulation sketches in Section~7.1 of v2 and v3 did not establish\nthe required reduction. The undecidability assertion and the unconditional\npure-equation complexity conclusions depending on it are therefore\nwithdrawn. Finite square term bijectivity remains open. The present\nreduction applies to the stated class with disequality tests and does\nnot establish that earlier assertion.",
+          "heading": "Correction to the earlier omnibus.",
+          "kind": "paragraph",
+          "labels": []
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Terms, interpretations, and the output image",
+      "blocks": [
+        {
+          "id": "s2-1",
+          "raw": "\\label{sec:language}\nFix a finite nonempty set $X$ of variables, also called \\emph{source\nvariables}, and a finite signature $\\Sigma$: a set of function symbols\nwith a specified nonnegative integer arity for each symbol. Terms are\nfinite rooted expressions over $X$ and $\\Sigma$, with ordered arguments.\nA symbol of arity zero is a constant symbol. Syntactic equality means\nliteral equality of expressions using the same symbol and variable\nnames; no algebraic identities or cancellation rules are imposed.\nAn interpretation $I$ on a nonempty set $A$ assigns one function\n$I_f:A^{\\operatorname{arity}(f)}\\to A$ to each $f\\in\\Sigma$.\nEvery such function is defined on its entire domain, with no prescribed\nvalues. For an assignment $a:X\\to A$, the value $u^I(a)$ of a term is\ndefined recursively. All occurrences of $f$ use the same $I_f$.",
+          "heading": "",
+          "kind": "paragraph",
+          "labels": []
+        },
+        {
+          "id": "s2-2",
+          "raw": "An instance $\\Gamma$ consists of variables $X=\\{x_1,\\ldots,x_m\\}$,\na finite signature $\\Sigma$, an output tuple\n$\\mathbf t=(t_1,\\ldots,t_r)$, and a finite list $\\Delta$ of tests\n$u\\ne v$ between terms over $X$ and $\\Sigma$.\nFor an interpretation $I$ on a finite nonempty set $A$, define\n\\[\n C_I=\\{a\\in A^m:u^I(a)\\ne v^I(a)\n                    \\text{ for every }(u\\ne v)\\in\\Delta\\}.\n\\]\nThe output map is\n$\\mathbf t^I(a)=(t_1^I(a),\\ldots,t_r^I(a))$.\nIts image on the allowed inputs is $\\mathbf t^I(C_I)\\subseteq A^r$.\nFor $n\\ge1$, the dispersion is\n\\[\n D_\\Gamma(n)=\\DD_n(\\mathbf t,\\Delta)\n       =\\max_{I\\text{ on }[n]}|\\mathbf t^I(C_I)|.\n\\]\nThe notation $\\DD_n(\\mathbf t,\\Delta)$ leaves $X$ and $\\Sigma$ implicit.",
+          "heading": "Definition 2.1.",
+          "kind": "definition",
+          "labels": []
+        },
+        {
+          "id": "s2-3",
+          "raw": "A bijection between two finite sets transports interpretations and\nassignments, preserving the number of outputs. Thus only $|A|$ matters.\nThere are finitely many functions of each specified arity on $[n]$,\nso the maximum exists. In particular, $D_\\Gamma(n)\\ge h$ means that\nsome interpretation on $[n]$ has at least $h$ distinct outputs.",
+          "heading": "",
+          "kind": "paragraph",
+          "labels": []
+        },
+        {
+          "id": "s2-4",
+          "raw": "For outputs $(x,y)$ and only the test $x\\ne y$, the output map is the\nidentity on pairs and has $n(n-1)$ outputs. Input and output counts can\ndiffer when other variables are present. For example, with variables\n$x,y,z$, outputs $(x,y,x)$ and only the test $x\\ne y$, there are\n$n^2(n-1)$ allowed inputs, but only $n(n-1)$ different outputs:\nchanging $z$ does not change the output.",
+          "heading": "",
+          "kind": "paragraph",
+          "labels": []
+        },
+        {
+          "id": "s2-5",
+          "raw": "One may introduce a new variable for each distinct nonvariable subterm\nand an equation recording its computation. For example, the output\n$f(g(x),y)$ can be written using $z=g(x)$ and $v=f(z,y)$, with output\n$v$. Every assignment to the original variables has a unique extension\nto the new ones. Replacing terms in outputs and tests by their names\ntherefore preserves the output image. Equal subterms receive the same\nname, and every use of a symbol still has the same interpretation.\nThese equations merely record evaluation; they add no further equality\ncondition on the original variables. This rewriting is often called\n\\emph{flattening}.",
+          "heading": "Writing nested terms as acyclic equations.",
+          "kind": "paragraph",
+          "labels": []
+        },
+        {
+          "id": "s2-6",
+          "raw": "For the complexity statements, names, arities, variables, output and\ntest lists, and ordered argument lists are explicitly encoded in binary.\nIntegers have canonical self-delimiting encodings, and every list includes\nits length and all entries. Let $N$ be the bit length of this description.\nTerms may be represented by syntax trees or by an acyclic graph listed\nin topological order, with arguments referring to earlier nodes.\nIn the latter representation, different nodes can still represent the\nsame expression. We identify them by syntax, processing child terms\nfirst, without expanding the graph into a potentially exponential tree.\nValidation and this identification take polynomial time in either\nrepresentation.",
+          "heading": "Finite input descriptions.",
+          "kind": "paragraph",
+          "labels": []
+        },
+        {
+          "id": "s2-7",
+          "raw": "The algorithm rejects invalid references, wrong argument counts,\nnoncanonical integer encodings and trailing data. A declared list length\nor arity does not justify a long search for absent entries: a parser\nstops and rejects when the supplied data end. Thus validation is\npolynomial in the actual input length even for malformed descriptions.\nFor the uniform problem, $k$ is a separate binary integer and inputs\nwith $k<2$ are rejected.",
+          "heading": "",
+          "kind": "paragraph",
+          "labels": []
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Image bounds from cuts in the term graph",
+      "blocks": [
+        {
+          "id": "s3-1",
+          "raw": "\\label{sec:routing}\nLet $S$ contain all distinct subterms of the outputs and tests, together\nwith every declared variable, and put $s=|S|\\ge1$. On $S$, draw an edge\nfrom each immediate argument to its parent term. Vertices represent\nexpressions, not separate occurrences of those expressions. Let $\\rho$\nbe the minimum size of a set meeting all directed paths from variables\nto outputs, including paths of length zero. Repeated output terms\ndesignate the same vertex.",
+          "heading": "",
+          "kind": "paragraph",
+          "labels": []
+        },
+        {
+          "id": "s3-2",
+          "raw": "Terms occurring only in tests do not change $\\rho$: all ancestors of\nan output already occur among its subterms. Constant symbols have no\nincoming edges and start no path from a variable. Unused variables and\nterms occurring only in tests can enlarge $S$ without increasing $\\rho$.\nFor example, the outputs $(x,y,f(z),g(f(z)))$ have $\\rho=3$, since the\nlast two terms share $f(z)$. The cut $\\{x,y,f(z)\\}$ has size three;\nthe paths consisting of $x$ alone, $y$ alone, and the edge from $z$ to\n$f(z)$ show that no smaller cut is possible.",
+          "heading": "",
+          "kind": "paragraph",
+          "labels": []
+        },
+        {
+          "id": "s3-3",
+          "raw": "\\label{thm:cut}\nIf a test in $\\Delta$ has syntactically identical sides, then\n$\\DD_n(\\mathbf t,\\Delta)=0$ for every $n\\ge1$.\nOtherwise, for every $n\\ge s$,\n\\[\n \\lfloor n/s\\rfloor^\\rho\\le \\DD_n(\\mathbf t,\\Delta)\\le n^\\rho.\n\\]\nFor each fixed instance without such a test,\n\\[\n \\DD_n=\\Theta(n^\\rho),\\qquad\n \\lim_{n\\to\\infty}\\frac{\\log\\DD_n}{\\log n}=\\rho.\n\\]\nOne can check for identical sides and compute $\\rho$ in polynomial time\nin the explicit input length.",
+          "heading": "Theorem 3.1. The term-cut bounds with disequalities.",
+          "kind": "theorem",
+          "labels": [
+            "thm:cut"
+          ]
+        },
+        {
+          "id": "s3-4",
+          "raw": "A test $u\\ne u$ cannot be satisfied. For the upper bound, fix an\ninterpretation and a cut $K$. The values of its terms determine every\noutput value. Indeed, evaluate an output recursively, stopping whenever\na vertex of $K$ is reached and using its given value. Any other leaf\nmust be a constant: reaching a variable without meeting $K$ would give\na path missed by the cut. Consequently two assignments with the same\nvalues at $K$ have the same output tuple. There are at most $n^{|K|}$\npossible tuples of values at $K$, and restricting the allowed inputs\ncannot increase this bound. Take a minimum cut.",
+          "heading": "Proof.",
+          "kind": "proof",
+          "labels": []
+        },
+        {
+          "id": "s3-5",
+          "raw": "For the lower bound, Menger's theorem gives $\\rho$ vertex-disjoint\npaths from variables to outputs. Choose a set $B$ of size $m\\ge1$ and\nuse the finite set $A=S\\times B$. An element $(u,b)$ has a label\n$u\\in S$ and a value $b\\in B$. We construct the functions so that\nevery subterm evaluates with its own label and the values at the\nchosen path starts are copied along their paths.",
+          "heading": "",
+          "kind": "proof",
+          "labels": []
+        },
+        {
+          "id": "s3-6",
+          "raw": "For a symbol $f$ of arity $d$, consider arguments\n$((u_1,b_1),\\ldots,(u_d,b_d))$. If\n$v=f(u_1,\\ldots,u_d)$ belongs to $S$, let the result have label $v$.\nIf a chosen path enters $v$ through $u_j$, set its value to $b_j$;\notherwise use a fixed element of $B$. Vertex-disjointness makes the\nchosen predecessor unique. If the predecessor term occurs in several\nargument positions, select any one of those positions. On the assignments\nused below they have equal values. For a constant symbol belonging to $S$, use the same\ndefault value and its own label. All remaining function values may be\nchosen arbitrarily. These instructions define one function for each\nsymbol: the symbol and the ordered input labels determine the term $v$,\nso different subterms cannot impose conflicting instructions.",
+          "heading": "",
+          "kind": "proof",
+          "labels": []
+        },
+        {
+          "id": "s3-7",
+          "raw": "Give each source variable its own label. Allow the values at the\n$\\rho$ path starts to vary independently in $B$, and fix all other\nsource values. Induction on terms shows that each subterm has its own\nlabel. Every test with different sides is therefore satisfied. Along\neach selected path its starting value is copied to the output, giving\n$m^\\rho$ distinct output tuples. Hence $\\DD_{sm}\\ge m^\\rho$.\nFor a larger set, extend each function arbitrarily while preserving\nits values on $(S\\times B)^d$. Taking $m=\\lfloor n/s\\rfloor$ proves\nthe lower bound for every $n\\ge s$.",
+          "heading": "",
+          "kind": "proof",
+          "labels": []
+        },
+        {
+          "id": "s3-8",
+          "raw": "For $n\\ge2s$, $\\lfloor n/s\\rfloor\\ge n/(2s)$, giving the growth\nand logarithmic limits, also when $\\rho=0$. To compute the cut, split\neach vertex into an entrance and exit joined by an edge of capacity one.\nReplace each original edge by an edge from the corresponding exit to\nentrance, of capacity $s+1$. Attach a new source to all variable\nentrances and all output exits to a new sink, again with capacity\n$s+1$. Cutting all unit edges costs $s$, so a minimum cut uses only\nunit edges. Integral max-flow/min-cut gives both $\\rho$ and the\nvertex-disjoint paths in polynomial time. This is the directed vertex\nform of Menger's theorem \\cite{Menger}.",
+          "heading": "",
+          "kind": "proof",
+          "labels": [],
+          "qed": true
+        },
+        {
+          "id": "s3-9",
+          "raw": "\\label{prop:sharp-cut}\nFor every $\\Gamma\\in\\mathcal C$ and $n\\ge2$,\n\\[\n D_\\Gamma(n)\\le b_{\\rho_\\Gamma}(n)\n                  =n^{\\rho_\\Gamma}-n^{\\rho_\\Gamma-1}.\n\\]\nFor every $j\\ge2$ the bound is sharp: the tuple of $j$ distinct variables,\nwith only the test $x\\ne y$ on its first two coordinates, has\n$\\rho_\\Gamma=j$ and $D_\\Gamma(n)=b_j(n)$.",
+          "heading": "Proposition 3.2. The sharper bound when $x,y$ are outputs.",
+          "kind": "proposition",
+          "labels": [
+            "prop:sharp-cut"
+          ]
+        },
+        {
+          "id": "s3-10",
+          "raw": "Every cut $K$ contains $x,y$ because of their paths of length zero.\nFor a fixed interpretation, the values at $K$ determine the output\ntuple, as in Theorem~\\ref{thm:cut}. On allowed inputs the values at\n$x,y$ differ, so there are at most\n\\[\n n(n-1)n^{|K|-2}=b_{|K|}(n)\n\\]\npossible tuples of values at the cut. Choose a minimum cut and maximise\nover interpretations. In the stated example, every allowed input is\na different output, and every one of the $j$ variables is an output.\nThus the cut has size $j$ and the image has size $b_j(n)$.",
+          "heading": "Proof.",
+          "kind": "proof",
+          "labels": [],
+          "qed": true
+        },
+        {
+          "id": "s3-11",
+          "raw": "\\label{cor:eventual}\nFix an integer $d\\ge0$ and a function $h_d$ such that\n$n^d<h_d(n)$ for all sufficiently large $n$, and\n$h_d(n)=o(n^{d+1})$. Given an instance, one can decide in polynomial\ntime whether $\\DD_n\\ge h_d(n)$ for all sufficiently large $n$.\nThe answer is yes exactly when no test has syntactically identical\nsides and $\\rho\\ge d+1$.",
+          "heading": "Corollary 3.3. Thresholds for all sufficiently large sets.",
+          "kind": "corollary",
+          "labels": [
+            "cor:eventual"
+          ]
+        },
+        {
+          "id": "s3-12",
+          "raw": "An identical-side test makes every image empty. Otherwise the lower\nbound is at least a positive constant, depending on the instance,\ntimes $n^\\rho$ for all sufficiently large $n$. If $\\rho\\ge d+1$,\nthis eventually exceeds $h_d(n)$. If $\\rho\\le d$, the upper bound\n$\\DD_n\\le n^d<h_d(n)$ gives the converse.",
+          "heading": "Proof.",
+          "kind": "proof",
+          "labels": [],
+          "qed": true
+        },
+        {
+          "id": "s3-13",
+          "raw": "For terms $f(x,y)$ and $f(y,x)$ using the same binary symbol, the\nordered input labels are $(x,y)$ and $(y,x)$. They are different, so\none function can give each result its required label. Two occurrences\nof the same term $f(x,y)$ instead use the same rule. For $f(u,u)$,\neither argument position can be used to copy the value of $u$.\nThe rules depend on terms, never on occurrences independently.",
+          "heading": "How the labels handle repeated symbols.",
+          "kind": "paragraph",
+          "labels": []
+        },
+        {
+          "id": "s3-14",
+          "raw": "This is the routing method of Riis and Gadouleau \\cite{RG}, with the\nadditional observation that the labels satisfy all disequalities at\nonce. For example, $u\\ne v$, $v\\ne w$, and $w\\ne u$ hold simultaneously\nwhen $u,v,w$ are distinct terms and each receives its own label.\nSmall finite sets can still be too small for the tests. The theorem\ncontrols growth as $n$ increases; it does not decide whether the sharp\nupper bound is ever reached at a finite size.",
+          "heading": "",
+          "kind": "paragraph",
+          "labels": []
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "Forcing identities from all distinct pairs",
+      "blocks": [
+        {
+          "id": "s4-1",
+          "raw": "\\label{lem:avoid}\nFor any set $A$ and function $F:A\\to A$,\n\\[\n [\\forall a,b\\in A\\ (a\\ne b\\Rightarrow F(a)\\ne b)]\n \\quad\\Longleftrightarrow\\quad F=\\id_A.\n\\]",
+          "heading": "Lemma 4.1. An inequality characterises the identity function.",
+          "kind": "lemma",
+          "labels": [
+            "lem:avoid"
+          ]
+        },
+        {
+          "id": "s4-2",
+          "raw": "If $F(a)\\ne a$, take $b=F(a)$ to contradict the stated condition.\nConversely, if $F=\\id_A$, the condition is just $a\\ne b\\Rightarrow a\\ne b$.",
+          "heading": "Proof.",
+          "kind": "proof",
+          "labels": [],
+          "qed": true
+        },
+        {
+          "id": "s4-3",
+          "raw": "For functions $F_1,\\ldots,F_M,W:A\\to A$, define the set of allowed pairs\n\\[\n C(F,W)=\\{(a,b)\\in A^2:a\\ne b,\\ F_j(a)\\ne b\\ (1\\le j\\le M),\\ W(a)\\ne a\\}.\n\\]\nWhen $(x,y)$ are the only variables and are also the outputs, this set\nis itself the output image. Its size is at most $n(n-1)$ for $|A|=n$.\nThe next proposition characterises equality, called saturation above.",
+          "heading": "",
+          "kind": "paragraph",
+          "labels": []
+        },
+        {
+          "id": "s4-4",
+          "raw": "\\label{prop:saturation}\nIf $|A|=n\\ge2$, then\n\\[\n |C(F,W)|=n(n-1)\n \\quad\\Longleftrightarrow\\quad\n [F_j=\\id_A\\text{ for all }j]\\ \\text{and}\\ [W\\text{ has no fixed point}].\n\\]",
+          "heading": "Proposition 4.2. Equality with the pair bound.",
+          "kind": "proposition",
+          "labels": [
+            "prop:saturation"
+          ]
+        },
+        {
+          "id": "s4-5",
+          "raw": "The set $C(F,W)$ is contained in the set of all $n(n-1)$ pairs with\ndifferent coordinates. Equality of their sizes means that every such\npair is allowed. Lemma~\\ref{lem:avoid} then gives $F_j=\\id_A$ for\neach $j$. For any $a\\in A$, choose $b\\ne a$; the test on $W$ gives\n$W(a)\\ne a$. Conversely, these identities and the absence of fixed\npoints make every pair with different coordinates satisfy every test.",
+          "heading": "Proof.",
+          "kind": "proof",
+          "labels": [],
+          "qed": true
+        },
+        {
+          "id": "s4-6",
+          "raw": "We can also count exactly how many pairs are excluded. For each $a\\in A$,\nput $B_a=\\{a,F_1(a),\\ldots,F_M(a)\\}$, and put\n$Z=\\{a\\in A:W(a)=a\\}$. If $a\\in Z$, no pair with first coordinate\n$a$ is allowed. Otherwise the allowed second coordinates are precisely\n$A\\setminus B_a$. Hence\n\\begin{align}\n |C(F,W)|&=\\sum_{a\\notin Z}(n-|B_a|),\\label{eq:count}\\\\\n n(n-1)-|C(F,W)|&=(n-1)|Z|+\n                  \\sum_{a\\notin Z}(|B_a|-1).\\label{eq:defect}\n\\end{align}\nIf $W$ has no fixed point, then $Z$ is empty and $|B_a|-1\\le M$, so\n\\begin{equation}\\label{eq:densitybound}\n n(n-1)-Mn\\le |C(F,W)|\\le n(n-1).\n\\end{equation}\nThe lower bound is an ordinary integer inequality and remains valid\nwhen $n(n-1)-Mn$ is negative.",
+          "heading": "",
+          "kind": "paragraph",
+          "labels": [
+            "eq:count",
+            "eq:defect",
+            "eq:densitybound"
+          ]
+        },
+        {
+          "id": "s4-7",
+          "raw": "Take $A=\\{0,1,2\\}$, outputs $(x,y)$, and tests $x\\ne y$, $F(x)\\ne y$.\nIf $F(0)=1$, $F(1)=1$, and $F(2)=2$, exactly five of the six pairs with\ndifferent coordinates are allowed: only $(0,1)$ is excluded. Admitting\nall six pairs requires $F(0)=0$ as well.\nIf we also require $F(x)\\ne x$, all six can never be admitted.\nMore generally, on any $n$-element set with $n\\ge2$, these three tests\nhave maximum output image size $n(n-2)$. A point moved by $F$ allows\n$n-2$ second coordinates, while a fixed point allows none. A cyclic\npermutation of all $n$ elements attains $n(n-2)$.\nThus the proportion $n(n-2)/[n(n-1)]$ tends to one, although the image\nalways falls short of $n(n-1)$ by at least $n$.",
+          "heading": "Example 4.3. A failed identity can exclude just one pair.",
+          "kind": "example",
+          "labels": []
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "Reduction from a fixed finitely presented group",
+      "blocks": [
+        {
+          "id": "s5-1",
+          "raw": "A finite quotient of a group $G$ means a finite group $Q$ together with\na surjective homomorphism $G\\to Q$. A word is \\emph{separated} in such\na quotient if its image is not the identity. Bridson and Wilton\n\\cite[Theorem 2.1]{BW}, deriving a consequence of Slobodskoi's construction\n\\cite{Slo}, prove that there is a fixed finitely presented group $G$\nfor which the set\n\\[\n \\{w:\\text{$w$ has nonidentity image in some finite quotient of $G$}\\}\n\\]\nis recursively enumerable and undecidable. Thus an algorithm can\neventually find a separating finite quotient whenever one exists,\nbut no algorithm decides for every input word whether one exists.\nThe presentation is fixed; the input consists only of the word.\nWe first describe our reduction for an arbitrary finite presentation.",
+          "heading": "The external undecidability theorem.",
+          "kind": "paragraph",
+          "labels": []
+        },
+        {
+          "id": "s5-2",
+          "raw": "Fix\n\\[\n G=\\langle a_1,\\ldots,a_d\\mid r_1,\\ldots,r_q\\rangle.\n\\]\nFor each generator introduce two unary symbols $p_i,m_i$. The notation\nsuggests a generator and its inverse, but their interpretations are\ninitially independent functions. For a signed word\n$v=\\ell_1\\cdots\\ell_L$, whose letters belong to\n$\\{a_1^{\\pm1},\\ldots,a_d^{\\pm1}\\}$, define\n\\[\n \\tau_v(x)=f_{\\ell_1}(f_{\\ell_2}(\\cdots f_{\\ell_L}(x)\\cdots)),\n \\qquad \\tau_\\varepsilon(x)=x,\n\\]\nwhere $f_{a_i}=p_i$, $f_{a_i^{-1}}=m_i$, and $\\varepsilon$ is the\nempty word. Let $\\mathcal L_G$ be the list of $M=2d+q$ terms\n\\[\n p_i(m_i(x)),\\ m_i(p_i(x))\\quad(1\\le i\\le d),\n \\qquad \\tau_{r_j}(x)\\quad(1\\le j\\le q).\n\\]\nWe call these the \\emph{law terms}, since requiring each to equal $x$\nwould impose inverse and relator identities. Repetitions are retained;\nan empty relator contributes the term $x$.\nOur convention for multiplying permutations is composition with the\nrightmost function applied first, agreeing with the displayed nesting.",
+          "heading": "",
+          "kind": "paragraph",
+          "labels": []
+        },
+        {
+          "id": "s5-3",
+          "raw": "Given the input word $w$, construct an instance with just the variables\n$x,y$, output tuple $(x,y)$, and tests\n\\begin{equation}\\label{eq:compiler}\n x\\ne y,\\qquad L(x)\\ne y\\quad(L\\in\\mathcal L_G),\\qquad\n \\tau_w(x)\\ne x.\n\\end{equation}\nHere $L(x)$ denotes the law term $L$, with its indicated variable $x$.\nWrite $D_{G,w}(n)$ for this instance's dispersion.\nFor each interpretation its output image is $C(F,W)$ above, where\n$F_1,\\ldots,F_M$ interpret the law terms and $W$ interprets $\\tau_w$.",
+          "heading": "",
+          "kind": "paragraph",
+          "labels": [
+            "eq:compiler"
+          ]
+        },
+        {
+          "id": "s5-4",
+          "raw": "\\label{thm:reduction}\nFor every finite presentation $G$ and signed word $w$,\n\\[\n\\begin{gathered}\n \\exists n\\ge2:\\ D_{G,w}(n)=n(n-1)\\\\\n \\Longleftrightarrow\\\\\n \\text{$w$ has nonidentity image in some finite quotient of $G$}.\n\\end{gathered}\n\\]\nThe construction has linear output length in the explicit presentation\nand word lengths, and is computable in polynomial time.",
+          "heading": "Theorem 5.1. The reduction.",
+          "kind": "theorem",
+          "labels": [
+            "thm:reduction"
+          ]
+        },
+        {
+          "id": "s5-5",
+          "raw": "Suppose $D_{G,w}(n)=n(n-1)$, and choose an interpretation attaining\nthis maximum on a set $A$ of size $n$. Write $p_i,m_i$ also for its\nunary functions. Proposition~\\ref{prop:saturation} gives\n$p_i\\circ m_i=\\id_A=m_i\\circ p_i$, so the $p_i$ are permutations and\n$m_i=p_i^{-1}$. It also gives $\\tau_{r_j}=\\id_A$ for every relator.\nThe universal property of the presentation therefore gives a\nhomomorphism $\\phi:G\\to\\Sym(A)$. The interpreted $\\tau_w=\\phi(w)$\nhas no fixed point, hence is not the identity. The finite group\n$\\phi(G)$, with the surjection $G\\to\\phi(G)$, is the required quotient.\nThe identities hold at every point of $A$, as required to define this\nhomomorphism.",
+          "heading": "Proof.",
+          "kind": "proof",
+          "labels": []
+        },
+        {
+          "id": "s5-6",
+          "raw": "Conversely, suppose $\\phi:G\\to Q$ is a finite quotient with\n$\\phi(w)\\ne1$. On $A=Q$, interpret $p_i$ as left multiplication by\n$\\phi(a_i)$ and $m_i$ as left multiplication by its inverse.\nEach law term is the identity function. The term $\\tau_w$ acts by\nleft multiplication by $\\phi(w)$, which has no fixed point:\n$\\phi(w)b=b$ would imply $\\phi(w)=1$. Proposition~\\ref{prop:saturation}\ngives $D_{G,w}(|Q|)=|Q|(|Q|-1)$, and $|Q|\\ge2$.\nThe construction of the instance only lists the inverse-law terms,\ncopies the relators, and writes the nested term for $w$, giving the\nstated size and time bounds.",
+          "heading": "",
+          "kind": "proof",
+          "labels": [],
+          "qed": true
+        },
+        {
+          "id": "s5-7",
+          "raw": "\\label{thm:fixed-signature}\nThere is a fixed finite presentation $G$ such that, given a signed\nword $w$, deciding whether $D_{G,w}(n)=n(n-1)$ for some $n\\ge2$ is\nundecidable. The associated instances use a fixed finite unary\nsignature, a fixed number of tests, and just two variables and two\noutputs. Their positive instances are recursively enumerable but not\ndecidable, and their complement is not recursively enumerable.",
+          "heading": "Theorem 5.2. Undecidability with fixed unary symbols and tests.",
+          "kind": "theorem",
+          "labels": [
+            "thm:fixed-signature"
+          ]
+        },
+        {
+          "id": "s5-8",
+          "raw": "Fix the presentation provided by the external theorem above and apply\nTheorem~\\ref{thm:reduction}. Only $\\tau_w$ varies with the input.\nFor enumerability, try $n=2,3,\\ldots$ in order, and for each $n$\nenumerate all interpretations on $[n]$. There are finitely many at\neach size, and each output image is computable by finite enumeration.\nThis procedure finds an image of size $n(n-1)$ whenever one exists.\nIf the negative instances also had such a semidecision procedure,\nrunning both procedures in parallel would decide every instance,\ncontradicting the reduction.",
+          "heading": "Proof.",
+          "kind": "proof",
+          "labels": [],
+          "qed": true
+        },
+        {
+          "id": "s5-9",
+          "raw": "Bridson--Wilton state their theorem for freely reduced words, meaning\nwords with no adjacent inverse pair $a_i a_i^{-1}$ or $a_i^{-1}a_i$.\nSuch a word is already a valid signed input word here. Conversely,\nremoving adjacent inverse pairs is computable and preserves evaluation\nin every group, hence preserves separation in finite quotients.\nThe reduction theorem therefore gives the same exact decision problem\nfor arbitrary signed words.\nThis does \\emph{not} license cancellation in the terms under arbitrary\ninterpretations: $p_i$ and $m_i$ need not be inverse functions.\nCancellation preserves their evaluation only after the required inverse\nlaws hold, as they do when the pair bound is attained.",
+          "heading": "",
+          "kind": "paragraph",
+          "labels": []
+        },
+        {
+          "id": "s5-10",
+          "raw": "The empty word yields the impossible test $x\\ne x$ and is a decidable\nnegative case. Restricting to nonempty freely reduced words consequently\nleaves the problem undecidable. Recursively enumerable completeness\nis not asserted; it does not follow from enumerability and\nundecidability alone.",
+          "heading": "",
+          "kind": "paragraph",
+          "labels": []
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": "Proof of the one-unit theorem",
+      "blocks": [
+        {
+          "id": "s6-1",
+          "raw": "Fix $k\\ge2$. Start with the instance associated to $G,w$ in\nTheorem~\\ref{thm:reduction}. Add $k-2$ new variables as further output\ncoordinates, with no tests involving them. This operation is called\n\\emph{padding}. For each interpretation the new image is exactly the\nCartesian product of the old pair image with $[n]^{k-2}$: the new\nvariables can be chosen independently of every test and of the old\noutputs. Maximising over the same interpretations therefore gives\n\\[\n D_{G,w}^{(k)}(n)=n^{k-2}D_{G,w}(n),\n\\]\nwhere the superscript denotes the padded instance.\nAll $k$ variables are outputs, so every cut contains them and they\nalso form a cut. Thus $\\rho=k$.\nSince $D_{G,w}(n)\\le n(n-1)$, for $n\\ge2$ the inequality\n$D_{G,w}^{(k)}(n)\\ge b_k(n)$ holds exactly when\n$D_{G,w}(n)=n(n-1)$. For fixed $k$, adding the variables and outputs\ntakes constant extra space; the signature and tests are unchanged.\nTheorem~\\ref{thm:fixed-signature} proves the claimed undecidability.",
+          "heading": "Proof of Theorem~\\ref{thm:main}.",
+          "kind": "proof",
+          "labels": []
+        },
+        {
+          "id": "s6-2",
+          "raw": "For the strict problem, a test with identical sides makes the answer\nno. Otherwise compute $\\rho=\\rho_\\Gamma$. If $\\rho\\le k$, then\nProposition~\\ref{prop:sharp-cut} gives, for every $n\\ge2$,\n\\[\n D_\\Gamma(n)\\le b_\\rho(n)\\le b_k(n),\n\\]\nso again the answer is no. If $\\rho\\ge k+1$, Theorem~\\ref{thm:cut} gives\n\\[\n D_\\Gamma(n)\\ge\\lfloor n/s\\rfloor^\\rho\n                 \\ge\\lfloor n/s\\rfloor^{k+1}\\qquad(n\\ge s).\n\\]\nFor $n=s^{k+1}$ the last expression is\n\\[\n (s^k)^{k+1}=n^k\\ge n^k-n^{k-1}+1=b_k(n)+1.\n\\]\nHere $s\\ge2$ because $x,y$ are distinct, so $n\\ge2$.\nThis proves the criterion and the explicit sufficient size.\nChecking syntax and computing a minimum vertex cut are polynomial-time\noperations, as detailed below. Comparing $\\rho$ with the binary\ninteger $k+1$ is polynomial too. The decision algorithm need not\nconstruct $n$ or any interpreting functions.",
+          "heading": "",
+          "kind": "proof",
+          "labels": []
+        },
+        {
+          "id": "s6-3",
+          "raw": "Finally, suppose a total computable bound $B(N)$ as in the theorem\nexisted for some fixed $k$. On an input from the padded family,\ncompute its bit length $N$ and enumerate $2\\le n\\le B(N)$.\nFor each size enumerate all interpretations and all assignments,\nform the set of distinct outputs satisfying the tests, and compare its\nsize with $b_k(n)$. The search is finite and, by the assumed bound,\nwould answer yes exactly on the positive instances. This would decide\nthe undecidable problem. The contradiction needs no time bound on\nthis exhaustive search.",
+          "heading": "",
+          "kind": "proof",
+          "labels": [],
+          "qed": true
+        },
+        {
+          "id": "s6-4",
+          "raw": "First validate the input as described in Section~\\ref{sec:language}.\nProcess terms in topological order. Assign an identifier to each source\nand identify compound terms by the record $(f,i_1,\\ldots,i_d)$ of their\nsymbol and ordered child identifiers. Equal records receive the same\nidentifier. Thus syntactically equal expressions are identified even\nwhen the input supplied different node names for them.\nReject any test whose two resulting identifiers agree. Build the term\ngraph on these identifiers, compute its minimum cut by the network in\nTheorem~\\ref{thm:cut}, and answer yes exactly when $\\rho_\\Gamma\\ge k+1$.",
+          "heading": "The polynomial-time algorithm.",
+          "kind": "paragraph",
+          "labels": []
+        },
+        {
+          "id": "s6-5",
+          "raw": "For a term description of $N$ bits, at most $N$ nodes and argument\nentries are supplied. Pairwise comparison of the records can be done\nin $O(N^3)$ bit operations. The split network has $O(N)$ vertices and\nedges and integer capacities at most $N+1$. An augmenting-path flow\nalgorithm needs at most $s\\le N$ augmentations, since each increases\nthe integer flow by at least one, while the cut of all unit edges\nbounds it by $s$. Path searches and updates involve only polynomially\nmany entries. Indices, capacities and flow values have $O(\\log N)$\nbits, so even sequential scans for lookups give polynomial bit cost.\nTogether with validation and the binary comparison with $k+1$, this\nproves the uniform polynomial-time bound. No loop of length $k$ is\nneeded when $k$ is large.",
+          "heading": "",
+          "kind": "paragraph",
+          "labels": []
+        },
+        {
+          "id": "s6-6",
+          "raw": "For an instance in $\\mathcal C$ without an identical-side test,\n$D_\\Gamma(n)=\\Theta(n^\\rho)$. If $k<\\rho$, the strict threshold is\nexceeded for all sufficiently large $n$. If $k>\\rho$, the sharp upper\nbound is smaller than $b_k(n)$ for every $n\\ge2$, so even the non-strict\nanswer is no. When $k=\\rho$, the non-strict question asks whether the\nupper bound $b_\\rho(n)$ is attained for some $n$; this is the subclass\non which the reduction proves undecidability.\nIt also follows that the existential strict question is equivalent\nto requiring $D_\\Gamma(n)\\ge b_k(n)+1$ for all sufficiently large $n$,\nand to requiring $D_\\Gamma(n)\\ge n^{k+1/2}$ for all sufficiently large\n$n$. These are consequences; both questions in Theorem~\\ref{thm:main}\nitself use the existential quantifier.",
+          "heading": "Which degree can give an undecidable question.",
+          "kind": "paragraph",
+          "labels": []
+        },
+        {
+          "id": "s6-7",
+          "raw": "For outputs $(x,y,t)$ in $\\mathcal C$, first reject a test with identical\nsides. Then $\\rho=2$ if $t$ contains no variable other than $x,y$,\nincluding when it contains no variables at all. If another variable\noccurs in $t$, a path from it to $t$ cannot pass through $x$ or $y$,\nsince variable vertices have no incoming edges. Together with the\npaths of length zero at $x,y$, this gives three disjoint paths.\nThe three outputs form a cut, so $\\rho=3$.\nFor $k=2$, the strict algorithm thus only has to check whether $t$\ncontains another variable. In the positive case $s^3$ is a sufficient\nsize and $D_\\Gamma(n)=\\Theta(n^3)$. The lower bound is\n$n^3/(8s^3)$ for $n\\ge2s$, hence at least $n^{5/2}$ for $n\\ge64s^6$.",
+          "heading": "Three outputs.",
+          "kind": "paragraph",
+          "labels": []
+        },
+        {
+          "id": "s6-8",
+          "raw": "Requiring $x,y$ to be outputs is essential to this criterion.\nFor example, with four distinct variables $x,y,z,w$, outputs $(z,w)$,\nand only the test $x\\ne y$, every pair $(z,w)$ is an output for\n$n\\ge2$. Thus $D(n)=n^2\\ge b_2(n)+1$ although the cut size is two.\nThis instance lies outside $\\mathcal C$: the two variables constrained\nto differ are not output coordinates.",
+          "heading": "",
+          "kind": "paragraph",
+          "labels": []
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "title": "Functions approaching the pair bound",
+      "blocks": [
+        {
+          "id": "s7-1",
+          "raw": "\\label{thm:near}\nFix a finite presentation $G$ and its $M=2d+q$ law terms.\nFor every nonempty signed word $w$ of length $L$ and every integer $n>L$,\n\\[\n n(n-1)-Mn\\le D_{G,w}(n)\\le n(n-1).\n\\]\nAn interpretation giving the lower bound is explicitly computable and\nuses only cyclic shifts. In particular, for each such word,\n\\[\n \\lim_{n\\to\\infty}\\frac{D_{G,w}(n)}{n(n-1)}=1,\n \\qquad D_{G,w}(n)=n^2-O_G(n).\n\\]\nThe constant in the error bound depends only on the presentation,\nwhile the condition $n>L$ also depends on the word.",
+          "heading": "Theorem 7.1. An explicit approximation to the pair bound.",
+          "kind": "theorem",
+          "labels": [
+            "thm:near"
+          ]
+        },
+        {
+          "id": "s7-2",
+          "raw": "On $A=\\mathbb Z/n\\mathbb Z$, interpret every $p_i$ and every $m_i$ as\n$z\\mapsto z+1$. A word of length $\\ell$ as written then acts by\n$z\\mapsto z+\\ell$, regardless of the signs of its letters.\nBecause $0<L<n$, the function interpreting $\\tau_w$ has no fixed point.\nFor each first coordinate $a$, the tests exclude at most $M+1$ second\ncoordinates: $a$ itself and the $M$ law values. The lower bound follows\nfrom \\eqref{eq:densitybound}. Dividing by $n(n-1)$ gives a proportion\nbetween $1-M/(n-1)$ and $1$, proving the limit and the error estimate.\nThe inequality is valid even if its lower bound is nonpositive.",
+          "heading": "Proof.",
+          "kind": "proof",
+          "labels": []
+        },
+        {
+          "id": "s7-3",
+          "raw": "The formal inverse symbols receive the same shift as the positive\nsymbols. This is permitted because an interpretation consists of\narbitrary functions. Inverse laws are forced only when every pair with\ndifferent coordinates is admitted.",
+          "heading": "",
+          "kind": "proof",
+          "labels": [],
+          "qed": true
+        },
+        {
+          "id": "s7-4",
+          "raw": "For this interpretation the exact count is\n\\[\n |C|=n(n-1-|R_n|),\\qquad\n R_n=\\{|v|\\bmod n:\\tau_v\\in\\mathcal L_G\\}\\setminus\\{0\\}.\n\\]\nEach inverse-law term is here regarded as its two-letter word, and\n$|v|$ always counts the letters without cancellation. Distinct nonzero\nresidues give distinct additional forbidden second coordinates for\neach first coordinate; the zero residue forbids nothing beyond $a$.",
+          "heading": "",
+          "kind": "paragraph",
+          "labels": []
+        },
+        {
+          "id": "s7-5",
+          "raw": "Given a nonempty word $w$ and a positive rational $\\varepsilon$, choose,\nfor example,\n\\[\n n=1+\\max\\{L,\\lceil1+M/\\varepsilon\\rceil\\}.\n\\]\nThis integer satisfies $n>L$ and $M/(n-1)\\le\\varepsilon$.\nReturn $n$ and the unary functions $z\\mapsto z+1\\pmod n$.\nUnder this interpretation the instance has at least\n$(1-\\varepsilon)n(n-1)$ distinct output pairs.\nThe functions have finite explicit tables; writing those tables takes\ntime polynomial in $n$ and the input length, with $n$ measured by its\nvalue rather than its binary length. Here \\emph{density} refers exactly\nto the ratio of the image size to $n(n-1)$.",
+          "heading": "",
+          "kind": "paragraph",
+          "labels": []
+        },
+        {
+          "id": "s7-6",
+          "raw": "This gives more information than the quadratic growth exponent:\nfor any prescribed rational error an algorithm produces functions with\nthe required proportion of outputs. Nonetheless it cannot decide\nwhether some interpretation admits all $n(n-1)$ pairs. A nonzero loss\nof at most $Mn$ pairs becomes arbitrarily small after division by\n$n(n-1)$, while zero loss imposes every group identity on all of $A$.\nThe approximate interpretations are not required to be group actions.",
+          "heading": "",
+          "kind": "paragraph",
+          "labels": []
+        },
+        {
+          "id": "s7-7",
+          "raw": "The distinction between an empty word and a word representing the\nidentity matters. The empty word gives $x\\ne x$ and zero dispersion.\nA nonempty word can represent the identity in $G$, or even cancel\nfreely to the empty word, while retaining positive length as an input\nexpression. Its shift interpretation still gives the bound above.\nThere is no conflict with the reduction theorem: cancellation preserves\ngroup evaluation, but need not preserve evaluation by these arbitrary\nunary functions. For such an identity word, the exact answer is no\neven though the proportions tend to one.",
+          "heading": "",
+          "kind": "paragraph",
+          "labels": []
+        },
+        {
+          "id": "s7-8",
+          "raw": "For the padded instances of degree $k\\ge2$, the exact product identity\ngives, for $n>L$,\n\\[\n b_k(n)-Mn^{k-1}\\le D_{G,w}^{(k)}(n)\\le b_k(n),\n \\qquad\n \\lim_{n\\to\\infty}\\frac{D_{G,w}^{(k)}(n)}{b_k(n)}=1.\n\\]\nThe lower bound again uses ordinary integer subtraction. For every\n$n\\ge2$ the ratio equals the original pair ratio. Thus the same\nalgorithm gives a proportion at least $1-\\varepsilon$ of $b_k(n)$\nby adding the independent output variables, although deciding whether\n$b_k(n)$ is attained at any size remains undecidable.",
+          "heading": "",
+          "kind": "paragraph",
+          "labels": []
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "title": "Scope and the problem without tests",
+      "blocks": [
+        {
+          "id": "s8-1",
+          "raw": "\\label{sec:open}\nThe decision problems use one finite set for all variables and function values.\nFor each fixed $k\\ge2$, undecidability already holds with $k$ variables,\nall retained as outputs, a fixed finite unary signature and a fixed\nnumber of tests. Only the nested expression for the input word varies.\nThe tests compare computed expressions as well as variables.\nWriting a computed term as a new variable with a defining equation does\nnot make it an independent source variable: its value is determined\nby the original inputs. The reduction therefore proves no\nundecidability result for the narrower language in which tests may\ncompare only source variables.",
+          "heading": "",
+          "kind": "paragraph",
+          "labels": []
+        },
+        {
+          "id": "s8-2",
+          "raw": "Without disequality tests, finite square term bijectivity asks the\nfollowing: given $k$ terms in $k$ variables, does some interpretation\non a finite set $A$, with $|A|\\ge2$, make the resulting map\n$A^k\\to A^k$ bijective? This problem remains open in general.\nPaper~2 \\cite{Paper2} identifies an image of size $|A|^k$ for such a\nmap with bijectivity, and gives padding reductions from the case $k=3$\nto the problem of attaining the full output set at every fixed output\ndimension at least three. Those reductions do not prove undecidability\nand are not used here. An unconditional polynomial-time/undecidable\nseparation for dispersion without disequality tests remains open.\nThe present bounds also concern a different quantity from the number\nof solutions of an arbitrary equation system or the entropy and\nguessing number of a graph; they do not imply that those quantities\nare integer-valued or efficiently computable.",
+          "heading": "The open bijectivity problem.",
+          "kind": "paragraph",
+          "labels": []
+        },
+        {
+          "id": "s8-3",
+          "raw": "The development and an archived release will be made available at:\n\\begin{quote}\n\\noindent\\textbf{GitHub:} \\PaperThreeLeanGitHub\\\\\n\\textbf{DOI:} \\PaperThreeLeanDOI\n\\end{quote}\nThe accompanying Lean 4.26 development has 71 mathematical and\nalgorithmic modules. It checks the output-image definition, the sharp\ncut bound when $x,y$ are outputs, finite directed Menger and max-flow\nresults, the routing construction, and the strict criterion for every\ndegree with its explicit sufficient size. It also checks the argument\nforcing identities, the equivalence with finite-quotient separation,\nthe exact product under padding, finite search, enumerability, and the\nabsence of a computable bound on alphabet size, as well as the\napproximation, asymptotic and flattening results.\nThe undecidability theorems assume explicitly the fixed-presentation\nfinite-group noncomputability result. The classical theorem of\nSlobodskoi in the form used by Bridson--Wilton is an external input,\nnot a theorem formalised in this project. The axiom audits use only\nthe standard axioms of Lean's classical foundations, with no admissions.\nThe build and audit records accompany the source.",
+          "heading": "Machine verification.",
+          "kind": "paragraph",
+          "labels": []
+        },
+        {
+          "id": "s8-4",
+          "raw": "For the strict decision algorithm, the development proves correctness\nof parsing, rejection of malformed bit strings, and the decision by\nmax-flow. It also certifies one fixed deterministic random-access\nmachine program under a logarithmic cost criterion. For every input\nbit string $b$, including malformed inputs, this program halts with\nthe specified decision result. Fixed constants $C\\ge1$ and $c$ bound\nboth its number of instructions executed and its total logarithmic\ncost by $C(|b|+1)^c$. The binary degree is part of the input; the\nprogram does not loop to its value. The main formal statements are\n\\texttt{program\\_polynomial} and \\texttt{program\\_accepts\\_iff}\nin \\texttt{MMain.lean}. The standard polynomial simulation from\nthis RAM model to a multitape Turing machine is not formalised here.\nThe ordinary bit-complexity argument appears in\nSection~\\ref{sec:mainproof}.",
+          "heading": "",
+          "kind": "paragraph",
+          "labels": []
+        },
+        {
+          "id": "s8-5",
+          "raw": "An interactive edition will accompany the source at the GitHub address\nabove. It links the text of this paper to explanations, exact formal\nstatements and proofs, including the hypotheses used at each stage.\nThe reader can inspect Lean's recorded proof states and follow formal\ndependencies into library proofs and the underlying logical rules.\nExternal mathematical input and the limits of machine verification\nare identified explicitly. This correspondence helps a reader check\nthat the formal statements express the claims made in the paper;\nkernel checking of a Lean proof alone does not establish that\ncorrespondence.",
+          "heading": "",
+          "kind": "paragraph",
+          "labels": []
+        }
+      ]
+    }
+  ],
+  "labels": {
+    "thm:main": {
+      "number": "1.1",
+      "page": "2",
+      "target": "s1-6"
+    },
+    "ex:nonvacuity": {
+      "number": "1.2",
+      "page": "3",
+      "target": "s1-11"
+    },
+    "sec:language": {
+      "number": "2",
+      "page": "4",
+      "target": "section-2"
+    },
+    "sec:routing": {
+      "number": "3",
+      "page": "5",
+      "target": "section-3"
+    },
+    "thm:cut": {
+      "number": "3.1",
+      "page": "6",
+      "target": "s3-3"
+    },
+    "prop:sharp-cut": {
+      "number": "3.2",
+      "page": "7",
+      "target": "s3-9"
+    },
+    "cor:eventual": {
+      "number": "3.3",
+      "page": "7",
+      "target": "s3-11"
+    },
+    "lem:avoid": {
+      "number": "4.1",
+      "page": "7",
+      "target": "s4-1"
+    },
+    "prop:saturation": {
+      "number": "4.2",
+      "page": "8",
+      "target": "s4-4"
+    },
+    "eq:count": {
+      "number": "1",
+      "page": "8",
+      "target": "s4-6"
+    },
+    "eq:defect": {
+      "number": "2",
+      "page": "8",
+      "target": "s4-6"
+    },
+    "eq:densitybound": {
+      "number": "3",
+      "page": "8",
+      "target": "s4-6"
+    },
+    "sec:reduction": {
+      "number": "5",
+      "page": "9",
+      "target": "section-5"
+    },
+    "eq:compiler": {
+      "number": "4",
+      "page": "9",
+      "target": "s5-3"
+    },
+    "thm:reduction": {
+      "number": "5.1",
+      "page": "9",
+      "target": "s5-4"
+    },
+    "thm:fixed-signature": {
+      "number": "5.2",
+      "page": "10",
+      "target": "s5-7"
+    },
+    "sec:mainproof": {
+      "number": "6",
+      "page": "10",
+      "target": "section-6"
+    },
+    "sec:near": {
+      "number": "7",
+      "page": "12",
+      "target": "section-7"
+    },
+    "thm:near": {
+      "number": "7.1",
+      "page": "12",
+      "target": "s7-1"
+    },
+    "sec:open": {
+      "number": "8",
+      "page": "14",
+      "target": "section-8"
+    }
+  },
+  "citations": {
+    "BW": "1",
+    "Menger": "2",
+    "Omnibus": "3",
+    "Paper1": "4",
+    "Paper2": "5",
+    "RG": "6",
+    "Slo": "7"
+  },
+  "bibliography": [
+    {
+      "id": "BW",
+      "number": "1",
+      "raw": "Martin~R. Bridson and Henry Wilton.\n The triviality problem for profinite completions.\n {\\em Inventiones Mathematicae}, 202:839--874, 2015.\n arXiv:1401.2273; Theorem 2.1."
+    },
+    {
+      "id": "Menger",
+      "number": "2",
+      "raw": "Karl Menger.\n Zur allgemeinen kurventheorie.\n {\\em Fundamenta Mathematicae}, 10:96--115, 1927."
+    },
+    {
+      "id": "Omnibus",
+      "number": "3",
+      "raw": "S{\\o}ren Riis.\n Term coding for extremal combinatorics: Dispersion and complexity\n  dichotomies.\n \\href{https://arxiv.org/abs/2504.16265v3}{arXiv:2504.16265v3}, 2025.\n Earlier omnibus; its square-bijectivity undecidability claim is\n  withdrawn in the present replacement."
+    },
+    {
+      "id": "Paper1",
+      "number": "4",
+      "raw": "S{\\o}ren Riis.\n Term coding: An entropic framework for extremal combinatorics and the\n  guessing--number sandwich theorem.\n \\href{https://arxiv.org/abs/2601.16614v2}{arXiv:2601.16614v2}, 2026.\n Revised 30 August 2026."
+    },
+    {
+      "id": "Paper2",
+      "number": "5",
+      "raw": "S{\\o}ren Riis.\n Term coding and dispersion: Exact and asymptotic decision problems.\n \\href{https://arxiv.org/abs/2602.08110v2}{arXiv:2602.08110v2}, 2026.\n Revised 1 September 2026."
+    },
+    {
+      "id": "RG",
+      "number": "6",
+      "raw": "S{\\o}ren Riis and Maximilien Gadouleau.\n Max-flow min-cut theorems on dispersion and entropy measures for\n  communication networks.\n {\\em Information and Computation}, 267:49--73, 2019.\n Preprint: arXiv:1012.5224."
+    },
+    {
+      "id": "Slo",
+      "number": "7",
+      "raw": "A.~M. Slobodskoi.\n Undecidability of the universal theory of finite groups.\n {\\em Algebra i Logika}, 20(2):207--230, 1981.\n In Russian; English translation in Algebra and Logic 20 (1981),\n  139--156."
+    }
+  ]
+}

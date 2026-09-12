@@ -1,0 +1,26 @@
+{
+  "Audit": {
+    "exit": 0,
+    "seconds": 15.9
+  },
+  "AuditClaude": {
+    "exit": 0,
+    "seconds": 29.0
+  },
+  "AuditGeneral": {
+    "exit": 0,
+    "seconds": 99.91
+  },
+  "AuditMachineRuntime": {
+    "exit": 0,
+    "seconds": 32.02
+  },
+  "TypesGeneral": {
+    "exit": 0,
+    "seconds": 8.15
+  },
+  "TypesMachineRuntime": {
+    "exit": 0,
+    "seconds": 7.79
+  }
+}

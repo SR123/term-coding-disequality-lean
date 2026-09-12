@@ -1,0 +1,42 @@
+MParseRec.lean:127:20: warning: unused variable `hW₁`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+
+MParseRec.lean:346:38: warning: This simp argument is unused:
+  List.mem_append
+
+Hint: Omit it from the simp argument list.
+  simp only [List.mem_cons, L̵i̵s̵t̵.̵m̵e̵m̵_̵a̵p̵p̵e̵n̵d̵,̵ ̵not_or]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MParseRec.lean:369:38: warning: This simp argument is unused:
+  List.mem_append
+
+Hint: Omit it from the simp argument list.
+  simp only [List.mem_cons, L̵i̵s̵t̵.̵m̵e̵m̵_̵a̵p̵p̵e̵n̵d̵,̵ ̵not_or]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MParseRec.lean:695:38: warning: unused variable `lo`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+
+MParseRec.lean:698:20: warning: unused variable `T'`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+
+MParseRec.lean:698:33: warning: unused variable `lo`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+
+MParseRec.lean:698:42: warning: unused variable `m`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+
+MParseRec.lean:698:52: warning: unused variable `v`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+
+ELABORATED MParseRec; exporting proof states
+EXPORTED MParseRec: 22887 info records

@@ -1,0 +1,42 @@
+MLib2.lean:17:43: warning: unused variable `hY`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+
+MLib2.lean:82:46: warning: unused variable `hY`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+
+MLib2.lean:82:80: warning: unused variable `hYO`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+
+MLib2.lean:203:5: warning: unused variable `hpre`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+
+MLib2.lean:828:71: warning: unused variable `ha`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+
+MLib2.lean:828:85: warning: unused variable `hb`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+
+MLib2.lean:829:65: warning: unused variable `hF1`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+
+MLib2.lean:829:83: warning: unused variable `hF2`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+
+MLib2.lean:950:57: warning: This simp argument is unused:
+  X_
+
+Hint: Omit it from the simp argument list.
+  simp [LvarsX, X̵_̵,̵ ̵I_, CNT_, PTR_, CONT_, OUT_]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+ELABORATED MLib2; exporting proof states
+EXPORTED MLib2: 79019 info records

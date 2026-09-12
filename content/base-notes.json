@@ -1,0 +1,1017 @@
+{
+  "s2-1": {
+    "title": "Terms and their meanings",
+    "body": "There are two different objects to keep separate: a term is a finite expression; an interpretation tells us how to evaluate it. The functions are shared across every occurrence of a symbol.",
+    "children": [
+      "syntax",
+      "tables",
+      "evaluation"
+    ],
+    "sources": [],
+    "kind": "explanation"
+  },
+  "syntax": {
+    "title": "What makes two terms the same?",
+    "body": "Variables are leaves. A compound term is a symbol together with an ordered family of argument terms. Equality is equality of this entire structure. No equation such as $f(x,y)=f(y,x)$ is built into the syntax.",
+    "children": [
+      "ordered",
+      "structural"
+    ],
+    "sources": [
+      "Threshold:Term"
+    ],
+    "kind": "explanation"
+  },
+  "ordered": {
+    "title": "Why does the argument order matter?",
+    "body": "For distinct variables $x,y$, the argument families $(x,y)$ and $(y,x)$ differ at their first coordinate. Hence the terms $f(x,y)$ and $f(y,x)$ differ syntactically. Their evaluated values may nevertheless agree under a particular interpretation.",
+    "children": [
+      "structural"
+    ],
+    "sources": [],
+    "kind": "explanation"
+  },
+  "structural": {
+    "title": "The definition ends in finite constructors",
+    "body": "The inductive definition has variable and application constructors. Recursive evaluation and structural induction follow the constructors of a finite term. This is a definition and an induction principle, rather than an extra algebraic identity.",
+    "children": [],
+    "sources": [
+      "Threshold:Term",
+      "Threshold:eval"
+    ],
+    "kind": "definition"
+  },
+  "tables": {
+    "title": "One total table per symbol",
+    "body": "For each $f$, Lean uses a function from $\\operatorname{Fin}(\\operatorname{arity}(f))\\to A$ to $A$. This is the ordered input tuple. A zero-arity input tuple has exactly one possible value, so its table chooses a constant. The same $I(f)$ is used everywhere.",
+    "children": [
+      "evaluation"
+    ],
+    "sources": [
+      "Semantics:Interpretation"
+    ],
+    "kind": "explanation"
+  },
+  "evaluation": {
+    "title": "How recursive evaluation works",
+    "body": "A variable evaluates to its assigned value. To evaluate $f(u_1,\\ldots,u_d)$, first evaluate each $u_i$, then apply the single table $I_f$ to the resulting ordered tuple.",
+    "children": [
+      "structural"
+    ],
+    "sources": [
+      "Threshold:eval"
+    ],
+    "kind": "explanation"
+  },
+  "s2-2": {
+    "title": "What exactly is being maximised?",
+    "body": "Fix the tables, filter the input assignments by all the tests, evaluate the output tuple, and count distinct outputs. Only then maximise over the tables.",
+    "children": [
+      "valid",
+      "image",
+      "maximum"
+    ],
+    "sources": [],
+    "kind": "explanation"
+  },
+  "valid": {
+    "title": "An assignment must pass every test",
+    "body": "Each test is stored as a pair of terms. Validity means that their evaluated values differ for every pair in the test list. This uses the same interpretation and the same input assignment in all tests.",
+    "children": [
+      "evaluation"
+    ],
+    "sources": [
+      "Semantics:Valid",
+      "Semantics:validAssignments"
+    ],
+    "kind": "explanation"
+  },
+  "image": {
+    "title": "Why count an image rather than inputs?",
+    "body": "The finite image removes duplicates. Two valid assignments contributing the same output list are counted once. Lean represents an output tuple as a list whose length is fixed by the output-term list.",
+    "children": [
+      "valid",
+      "finite-count"
+    ],
+    "sources": [
+      "GeneralSemantics:tupleEval",
+      "GeneralSemantics:filteredImage"
+    ],
+    "kind": "explanation"
+  },
+  "maximum": {
+    "title": "The finite supremum is the dispersion",
+    "body": "Lean takes the supremum of image cardinalities over the finite collection of interpretations. For a nonempty finite alphabet there is at least one interpretation, for example the constant tables.",
+    "children": [
+      "tables",
+      "finite-count"
+    ],
+    "sources": [
+      "GeneralSemantics:dispersionTuple"
+    ],
+    "kind": "explanation"
+  },
+  "s2-3": {
+    "title": "Alphabet transport and attainment",
+    "body": "Renaming alphabet elements cannot change how many outputs there are. Finiteness of the table space also ensures the maximum is attained.",
+    "children": [
+      "transport",
+      "attainment"
+    ],
+    "sources": [],
+    "kind": "explanation"
+  },
+  "transport": {
+    "title": "Why a bijection preserves dispersion",
+    "body": "Extend an interpretation along the bijection, preserving all table values on transported inputs. Induction on terms transports evaluation. Injectivity preserves disequalities and distinct outputs. Applying the construction to the inverse bijection gives the opposite inequality.",
+    "children": [
+      "evaluation"
+    ],
+    "sources": [
+      "GeneralSemantics:filteredImage_embedding_le",
+      "GeneralSemantics:dispersionTuple_embedding_le"
+    ],
+    "kind": "explanation"
+  },
+  "attainment": {
+    "title": "A threshold is attained by some tables",
+    "body": "The displayed Lean theorem assumes $h>0$. For $h=0$, every image meets the threshold and constant tables provide an interpretation because the alphabet is nonempty. This small edge case is part of matching the paper to the Lean statement.",
+    "children": [
+      "maximum"
+    ],
+    "sources": [
+      "GeneralSemantics:dispersionTuple_ge_iff"
+    ],
+    "kind": "explanation"
+  },
+  "s2-4": {
+    "title": "The unused variable creates repeated inputs",
+    "body": "Choose $x$ in $n$ ways and $y\\ne x$ in $n-1$ ways. For each pair there are $n$ choices of $z$, but all give the same output $(x,y,x)$. The output count is therefore $n(n-1)$.",
+    "children": [
+      "image",
+      "pair-count"
+    ],
+    "sources": [
+      "GeneralExamples:repeat_example"
+    ],
+    "kind": "explanation"
+  },
+  "pair-count": {
+    "title": "Why are there $n(n-1)$ distinct pairs?",
+    "body": "For each first coordinate $a$, exactly one of the $n$ possible second coordinates is forbidden: $a$ itself. Sum the $n-1$ choices over the $n$ rows.",
+    "children": [
+      "finite-count"
+    ],
+    "sources": [
+      "Core:card_guardPairs"
+    ],
+    "kind": "explanation"
+  },
+  "finite-count": {
+    "title": "Finite counting is a library boundary here",
+    "body": "Finite sets count each element once. Images cannot have more elements than their domain; disjoint rows add their cardinalities; a function from a $k$-element set to an $n$-element set has $n^k$ possible values. The linked Lean proofs use the corresponding Mathlib results. This sample stops expanding those library proofs at this boundary.",
+    "children": [],
+    "sources": [],
+    "kind": "library boundary"
+  },
+  "s2-5": {
+    "title": "Flattening preserves the same output image",
+    "body": "The new names are values computed from the original inputs. They are not additional free choices. Existence and uniqueness of this extension give both directions of equality between the two images.",
+    "children": [
+      "flat-exists",
+      "flat-unique",
+      "flat-image"
+    ],
+    "sources": [],
+    "kind": "explanation"
+  },
+  "flat-exists": {
+    "title": "Why does an extension exist?",
+    "body": "Process nodes in topological order. Each equation only asks for values of earlier nodes, so evaluation supplies a value for the next name.",
+    "children": [
+      "structural"
+    ],
+    "sources": [
+      "Flattening:extend_defines"
+    ],
+    "kind": "explanation"
+  },
+  "flat-unique": {
+    "title": "Why can there be only one extension?",
+    "body": "Two extensions agree on the original sources. Inductively, they agree on the arguments of the next node; applying the same table forces agreement at that node too.",
+    "children": [
+      "evaluation"
+    ],
+    "sources": [
+      "Flattening:defines_unique"
+    ],
+    "kind": "explanation"
+  },
+  "flat-image": {
+    "title": "Why is this image equality, not just a bound?",
+    "body": "Every original assignment extends to a solution of the defining equations. Conversely, uniqueness forces every solution to be the evaluation extension of its source assignment. Tests and output coordinates therefore agree in both directions. The tuple theorem below requires a valid encoded instance.",
+    "children": [
+      "flat-exists",
+      "flat-unique"
+    ],
+    "sources": [
+      "TupleFlattening:flatImageG_eq",
+      "TupleFlattening:flatMaxG_eq"
+    ],
+    "kind": "explanation"
+  },
+  "s2-6": {
+    "title": "What input length measures",
+    "body": "The complexity variable is the actual number of supplied bits. On a DAG, process children first and identify each node by its symbol and ordered list of already canonical child names. This avoids unfolding repeated subterms into an exponentially larger tree.",
+    "children": [
+      "canonical",
+      "runtime-boundary"
+    ],
+    "sources": [],
+    "kind": "explanation"
+  },
+  "canonical": {
+    "title": "Why does processing children first work?",
+    "body": "Assume earlier nodes have equal canonical names exactly when they denote equal terms. Two new applications denote the same term precisely when their symbols and ordered child-name lists agree. This extends the invariant by induction over the node list.",
+    "children": [
+      "structural"
+    ],
+    "sources": [],
+    "kind": "explanation"
+  },
+  "runtime-boundary": {
+    "title": "Correctness and machine running time are separate claims",
+    "body": "The linked source establishes parsing or decision correctness. A polynomial bound on an explicitly charged cost also needs a connection to the chosen machine model before it certifies ordinary running time. This reader does not certify that additional connection or report the status of the separate runtime formalisation.",
+    "children": [],
+    "sources": [
+      "Parsing:decodeInput_eq_some_iff",
+      "Parsing:decideBits_iff_StrictBits"
+    ],
+    "kind": "scope boundary"
+  },
+  "s2-7": {
+    "title": "Malformed data must not force a huge loop",
+    "body": "A short binary header may announce an enormous list length. A parser must check the actual remaining input and reject when entries are missing. Its work must be bounded in terms of supplied bits, not the claimed length.",
+    "children": [
+      "runtime-boundary"
+    ],
+    "sources": [
+      "Parsing:decodeInput",
+      "Parsing:decodeInput_sizes"
+    ],
+    "kind": "explanation"
+  },
+  "s3-1": {
+    "title": "The graph and the meaning of a cut",
+    "body": "The vertices are distinct expressions. Edges follow the dependence of a parent value on an immediate argument value. A cut blocks every source-to-output dependency path.",
+    "children": [
+      "cut-definition",
+      "zero-paths",
+      "support"
+    ],
+    "sources": [],
+    "kind": "explanation"
+  },
+  "cut-definition": {
+    "title": "How does Lean express “every path is met”?",
+    "body": "An inductive predicate describes a variable-to-term path avoiding the cut. An output is cut off if no such avoiding path reaches it. This formulation includes a source which is already an output.",
+    "children": [
+      "structural"
+    ],
+    "sources": [
+      "TermGraph:Avoids",
+      "TermGraph:IsCut"
+    ],
+    "kind": "explanation"
+  },
+  "zero-paths": {
+    "title": "Why must an output variable belong to every cut?",
+    "body": "The path consisting solely of that variable is already a source-to-output path. The only vertex which can meet it is the variable itself.",
+    "children": [
+      "cut-definition"
+    ],
+    "sources": [
+      "TermGraph:source_output_mem_cut"
+    ],
+    "kind": "explanation"
+  },
+  "support": {
+    "title": "Why include tests and unused variables in $S$?",
+    "body": "The routing construction needs a label for every tested subterm and every declared source. The support is finite and nonempty. It can be larger than what is needed to compute the cut.",
+    "children": [
+      "syntax"
+    ],
+    "sources": [
+      "TermGraph:tupleSupport"
+    ],
+    "kind": "explanation"
+  },
+  "s3-2": {
+    "title": "A bottleneck and two harmless kinds of vertex",
+    "body": "Test-only terms do not create new paths into outputs. Constants create no variable-starting paths. In the example, three disjoint paths force a lower bound of three, and the stated three-vertex cut attains it.",
+    "children": [
+      "test-vertices",
+      "bottleneck"
+    ],
+    "sources": [],
+    "kind": "explanation"
+  },
+  "test-vertices": {
+    "title": "Why can test-only terms not increase the cut number?",
+    "body": "Following a path backwards from an output visits only its subterms. Extra test vertices cannot become part of such a path unless they already occur in that output support.",
+    "children": [
+      "cut-definition"
+    ],
+    "sources": [
+      "GeneralExamples:cutSize_tests_irrelevant"
+    ],
+    "kind": "explanation"
+  },
+  "bottleneck": {
+    "title": "Why is the example exactly three?",
+    "body": "Every cut must contain $x$ and $y$. The separate path $z\\to f(z)$ needs a third vertex. Conversely, $\\{x,y,f(z)\\}$ intercepts every path to the four outputs, including the paths to $g(f(z))$.",
+    "children": [
+      "zero-paths"
+    ],
+    "sources": [
+      "GeneralExamples:bottleneckOutputs",
+      "GeneralExamples:bottleneck_cutSize"
+    ],
+    "kind": "explanation"
+  },
+  "s3-3": {
+    "title": "Theorem 3.1 separates into four claims",
+    "body": "The empty-image obstruction, cut upper bound, tagged routing lower bound and limiting argument each have their own justification. The final sentence about running time additionally needs a machine cost model.",
+    "children": [
+      "identical",
+      "upper",
+      "routing",
+      "growth",
+      "runtime-boundary"
+    ],
+    "sources": [
+      "GeneralAsymptotics:cut_sandwich'"
+    ],
+    "kind": "explanation"
+  },
+  "identical": {
+    "title": "Why does $u\\ne u$ force dispersion zero?",
+    "body": "Both sides evaluate to the same value for every assignment and every interpretation. No assignment is valid, so every filtered image is empty.",
+    "children": [
+      "valid",
+      "self-contradiction"
+    ],
+    "sources": [
+      "GeneralSemantics:identical_test_dispersionTuple_zero"
+    ],
+    "kind": "explanation"
+  },
+  "s3-4": {
+    "title": "Cut values determine every output",
+    "body": "The key step is an agreement statement: two assignments which agree on values at the cut must agree on every output. Counting cut-value tuples then gives the upper bound.",
+    "children": [
+      "agreement",
+      "upper"
+    ],
+    "sources": [],
+    "kind": "explanation"
+  },
+  "agreement": {
+    "title": "Why can evaluation stop at the cut?",
+    "body": "Recurse backwards through an output. At a cut term the value is known. Otherwise recurse through its arguments. A remaining variable leaf would yield a path avoiding the cut, contrary to its definition. A constant leaf has its fixed value under the chosen interpretation.",
+    "children": [
+      "cut-definition",
+      "evaluation"
+    ],
+    "sources": [
+      "SharpCut:eval_eq_of_agree_on_cut",
+      "SharpCut:tupleEval_eq_of_agree_on_cut"
+    ],
+    "kind": "explanation"
+  },
+  "upper": {
+    "title": "How does agreement give $D(n)\\le n^\\rho$?",
+    "body": "An assignment supplies one value in $A$ for each cut term. There are at most $n^{|K|}$ such functions. Equal cut values give equal outputs, so there are no more output tuples. Use a minimum cut and maximise over interpretations.",
+    "children": [
+      "agreement",
+      "finite-count"
+    ],
+    "sources": [
+      "GeneralAsymptotics:filteredImage_card_le_pow_cut",
+      "GeneralAsymptotics:dispersionTuple_le_pow_cutSize"
+    ],
+    "kind": "explanation"
+  },
+  "s3-5": {
+    "title": "Disjoint paths carry independent values",
+    "body": "The paths provide $\\rho$ separate channels. Labels identify terms; payloads carry the independently chosen source values. Both pieces are needed when symbols are shared.",
+    "children": [
+      "menger",
+      "routing"
+    ],
+    "sources": [],
+    "kind": "explanation"
+  },
+  "menger": {
+    "title": "Where do the $\\rho$ disjoint paths come from?",
+    "body": "The finite directed vertex form of Menger gives as many vertex-disjoint source-to-output paths as the minimum vertex cut. TermMenger connects the formal term graph to that result and constructs routing data. The general routing theorem below discharges the Menger input rather than leaving it as a hypothesis.",
+    "children": [
+      "cut-definition"
+    ],
+    "sources": [
+      "TermMenger:mengerInput",
+      "TermMenger:routing_lower_bound"
+    ],
+    "kind": "explanation"
+  },
+  "routing": {
+    "title": "What is carried by a tagged alphabet element?",
+    "body": "An element of $S\\times B$ consists of a term label and a payload in $B$. Evaluation preserves the correct term label. On a chosen path it also preserves the payload entering at that path’s source.",
+    "children": [
+      "table-consistency",
+      "tag-induction",
+      "payload"
+    ],
+    "sources": [
+      "GeneralRouting:finiteRouteTable"
+    ],
+    "kind": "explanation"
+  },
+  "s3-6": {
+    "title": "Why the shared operation tables are consistent",
+    "body": "An operation sees its symbol and an ordered tuple of labelled inputs. Those labels identify at most one parent expression. Vertex-disjointness ensures that the parent has at most one chosen incoming route.",
+    "children": [
+      "table-consistency",
+      "repeated-arg",
+      "totality"
+    ],
+    "sources": [],
+    "kind": "explanation"
+  },
+  "table-consistency": {
+    "title": "Could two terms demand different values at the same table entry?",
+    "body": "If the symbol and all ordered argument labels agree, the two parent expressions are syntactically identical. They therefore require the same rule. Different parent terms cannot issue contradictory instructions for that entry.",
+    "children": [
+      "ordered",
+      "structural"
+    ],
+    "sources": [
+      "GeneralRouting:routeTable",
+      "GeneralRouting:finiteRouteTable"
+    ],
+    "kind": "explanation"
+  },
+  "repeated-arg": {
+    "title": "What if a predecessor occurs twice?",
+    "body": "In $f(u,u)$ both argument positions evaluate the same term under the same assignment. Their values agree. Selecting either occurrence to copy its payload therefore gives the same payload.",
+    "children": [
+      "evaluation"
+    ],
+    "sources": [],
+    "kind": "explanation"
+  },
+  "totality": {
+    "title": "What happens at unused table entries?",
+    "body": "Choose a default alphabet element. Use it wherever an input-label pattern is not prescribed by the finite support. This defines a total function; it imposes no restriction on the inputs used in the lower-bound construction.",
+    "children": [
+      "tables"
+    ],
+    "sources": [
+      "GeneralRouting:finiteRouteTable"
+    ],
+    "kind": "explanation"
+  },
+  "s3-7": {
+    "title": "Why all these outputs are valid and different",
+    "body": "The construction must prove two independent properties: every test passes, and different payload choices produce different output tuples. The alphabet can then be enlarged without losing those outputs.",
+    "children": [
+      "tag-induction",
+      "payload",
+      "extension"
+    ],
+    "sources": [],
+    "kind": "explanation"
+  },
+  "tag-induction": {
+    "title": "Why do all syntactically different tests pass simultaneously?",
+    "body": "Source variables start with their own labels. At an application, the table constructs the parent’s label from the ordered child labels. Structural induction gives the correct label for every supported term. Different labels imply different alphabet elements.",
+    "children": [
+      "structural",
+      "table-consistency"
+    ],
+    "sources": [
+      "GeneralRouting:finite_route_eval_embed",
+      "GeneralRouting:finite_route_distinct_terms_pass"
+    ],
+    "kind": "explanation"
+  },
+  "payload": {
+    "title": "Why are there $m^\\rho$ different outputs?",
+    "body": "Choose each of the $\\rho$ source payloads independently from an $m$-element set. A path copies its payload to its output. Two choices that differ on a path are distinguishable at that path’s output. Thus the output map on these choices is injective.",
+    "children": [
+      "menger",
+      "finite-count"
+    ],
+    "sources": [
+      "GeneralRouting:finite_route_eval_payload",
+      "GeneralRouting:finite_route_image_lower"
+    ],
+    "kind": "explanation"
+  },
+  "extension": {
+    "title": "Why does the floor appear?",
+    "body": "For $n\\ge s\\ge1$, set $m=\\lfloor n/s\\rfloor\\ge1$. The tagged alphabet has $sm\\le n$ elements. Embed it in the $n$-element alphabet and extend the tables, preserving all old evaluations and distinct outputs.",
+    "children": [
+      "transport",
+      "totality"
+    ],
+    "sources": [
+      "GeneralSemantics:filteredImage_embedding_le",
+      "TermMenger:routing_lower_bound"
+    ],
+    "kind": "explanation"
+  },
+  "s3-8": {
+    "title": "Limits and the finite cut algorithm",
+    "body": "The first sentence follows by a squeeze between two powers with constant factors. The remaining sentences explain the split-vertex network for computing the cut.",
+    "children": [
+      "growth",
+      "log-limit",
+      "split-network"
+    ],
+    "sources": [],
+    "kind": "explanation"
+  },
+  "growth": {
+    "title": "Why is the growth $\\Theta(n^\\rho)$?",
+    "body": "For $n\\ge2s$, $\\lfloor n/s\\rfloor\\ge n/(2s)$. Hence $(2s)^{-\\rho}n^\\rho\\le D(n)\\le n^\\rho$. The positive constant depends only on the fixed instance. If $\\rho=0$, both bounds are $1$.",
+    "children": [
+      "upper",
+      "extension"
+    ],
+    "sources": [
+      "GeneralAsymptotics:real_cut_lower'"
+    ],
+    "kind": "explanation"
+  },
+  "log-limit": {
+    "title": "Why does the logarithmic ratio converge?",
+    "body": "For sufficiently large $n$, $D(n)>0$ and $\\log n>0$. Taking logarithms and dividing gives $\\rho-\\rho\\log(2s)/\\log n\\le \\log D(n)/\\log n\\le\\rho$. The correction tends to zero. This also covers $\\rho=0$.",
+    "children": [
+      "growth",
+      "limit-boundary"
+    ],
+    "sources": [
+      "GeneralAsymptotics:log_ratio_tendsto'"
+    ],
+    "kind": "explanation"
+  },
+  "limit-boundary": {
+    "title": "The remaining analytic step",
+    "body": "The logarithm tends to infinity with its positive argument, so a fixed real constant divided by $\\log n$ tends to zero. The squeeze theorem then yields the claimed limit. The exact Lean proof links these Mathlib facts; their full internal proofs are outside this sample.",
+    "children": [],
+    "sources": [],
+    "kind": "library boundary"
+  },
+  "split-network": {
+    "title": "Why do capacities $1$ and $s+1$ encode a vertex cut?",
+    "body": "Each original vertex becomes one capacity-one edge. Every other edge has capacity $s+1$. Removing all $s$ unit edges is already a cut, so a minimum cut cannot afford a large-capacity edge. Its unit edges therefore identify a vertex cut of the original graph.",
+    "children": [
+      "cut-definition",
+      "runtime-boundary"
+    ],
+    "sources": [],
+    "kind": "explanation"
+  },
+  "s3-9": {
+    "title": "The sharper bound uses the retained pair",
+    "body": "The class $\\mathcal C$ requires distinct source variables $x,y$ as output coordinates and includes the test $x\\ne y$. This forces two cut coordinates to differ.",
+    "children": [
+      "class-c",
+      "sharp",
+      "sharp-example"
+    ],
+    "sources": [],
+    "kind": "explanation"
+  },
+  "class-c": {
+    "title": "The hypothesis $\\Gamma\\in\\mathcal C$",
+    "body": "The output tuple starts with the distinct source variables $x,y$ and has at least two coordinates. The tests include $x\\ne y$. Other outputs may repeat and may use any declared variables. These requirements are essential for the sharper cut count.",
+    "children": [
+      "zero-paths"
+    ],
+    "sources": [],
+    "kind": "definition"
+  },
+  "sharp": {
+    "title": "Why subtract $n^{\\rho-1}$?",
+    "body": "Every cut contains the two distinct vertices $x,y$. Its allowed value assignments have $n$ choices for $x$, $n-1$ choices for $y$, and $n^{|K|-2}$ choices for the remaining vertices. Multiplying gives $n^{|K|}-n^{|K|-1}$.",
+    "children": [
+      "class-c",
+      "agreement",
+      "pair-count"
+    ],
+    "sources": [
+      "SharpCut:dispersionTuple_le_threshold"
+    ],
+    "kind": "explanation"
+  },
+  "sharp-example": {
+    "title": "Why is the bound attained by the identity outputs?",
+    "body": "When all $j$ source variables are outputs, each valid assignment is its own distinct output tuple. Every cut must contain all $j$ variables. The single test removes precisely the tuples whose first two coordinates agree.",
+    "children": [
+      "zero-paths",
+      "pair-count"
+    ],
+    "sources": [
+      "SharpCut:identity_cutSize",
+      "SharpCut:sharp_example_dispersion"
+    ],
+    "kind": "explanation"
+  },
+  "s3-10": {
+    "title": "Counting values on a minimum cut",
+    "body": "This proof combines the mandatory vertices $x,y$, the agreement-on-cut lemma and a count of off-diagonal coordinate pairs.",
+    "children": [
+      "sharp",
+      "sharp-example"
+    ],
+    "sources": [],
+    "kind": "explanation"
+  },
+  "s3-11": {
+    "title": "The eventual threshold is a degree test",
+    "body": "After rejecting identical-side tests, the image has growth degree $\\rho$. A threshold lying strictly above $n^d$ and asymptotically below $n^{d+1}$ separates $\\rho\\le d$ from $\\rho\\ge d+1$.",
+    "children": [
+      "eventual-yes",
+      "eventual-no",
+      "runtime-boundary"
+    ],
+    "sources": [
+      "GeneralAsymptotics:eventual_h_iff"
+    ],
+    "kind": "explanation"
+  },
+  "s3-12": {
+    "title": "Both directions of the criterion",
+    "body": "The positive direction uses the little-o hypothesis and a positive lower-bound constant. The negative direction uses the strict inequality $n^d<h_d(n)$.",
+    "children": [
+      "eventual-yes",
+      "eventual-no",
+      "identical"
+    ],
+    "sources": [],
+    "kind": "explanation"
+  },
+  "eventual-yes": {
+    "title": "Why does $\\rho\\ge d+1$ suffice?",
+    "body": "For a fixed positive lower-bound constant $c$, the hypothesis $h_d(n)/n^{d+1}\\to0$ gives $h_d(n)<c n^{d+1}$ eventually. For $n\\ge1$, this is at most $c n^\\rho\\le D(n)$.",
+    "children": [
+      "growth",
+      "limit-boundary"
+    ],
+    "sources": [
+      "GeneralAsymptotics:eventual_h_iff"
+    ],
+    "kind": "explanation"
+  },
+  "eventual-no": {
+    "title": "Why does $\\rho\\le d$ fail?",
+    "body": "For $n\\ge1$, $D(n)\\le n^\\rho\\le n^d$. Eventually the threshold is strictly larger than $n^d$, so the requested inequality is false.",
+    "children": [
+      "upper"
+    ],
+    "sources": [
+      "GeneralAsymptotics:eventual_h_iff"
+    ],
+    "kind": "explanation"
+  },
+  "s3-13": {
+    "title": "The interpretation never varies by occurrence",
+    "body": "Labels distinguish ordered term shapes, not occurrences. Consequently one table handles $f(x,y)$, $f(y,x)$ and repeated uses consistently.",
+    "children": [
+      "table-consistency",
+      "repeated-arg"
+    ],
+    "sources": [],
+    "kind": "explanation"
+  },
+  "s3-14": {
+    "title": "The asymptotic theorem leaves saturation open",
+    "body": "The tagged construction works once the alphabet is large enough. It ensures simultaneous satisfaction of distinct tests and a growth lower bound; it does not assert that the finite sharp upper bound is attained.",
+    "children": [
+      "tag-induction",
+      "near-not-exact",
+      "routing-credit"
+    ],
+    "sources": [],
+    "kind": "explanation"
+  },
+  "routing-credit": {
+    "title": "The routing reference",
+    "body": "The paper attributes the routing method to Riis and Gadouleau (reference [6]). The additional observation used here is that distinct term labels make all syntactically distinct disequalities true at once. This is a bibliographical attribution, not a mathematical proof dependency.",
+    "children": [
+      "tag-induction"
+    ],
+    "sources": [],
+    "kind": "reference"
+  },
+  "s4-1": {
+    "title": "An inequality forces the identity",
+    "body": "The quantifier over every distinct pair is crucial. If a value moves, use its image itself as the forbidden second coordinate.",
+    "children": [
+      "identity-forward",
+      "identity-reverse",
+      "identity-match"
+    ],
+    "sources": [
+      "Core:avoidance_iff_identity"
+    ],
+    "kind": "explanation"
+  },
+  "s4-2": {
+    "title": "The contradiction in full",
+    "body": "Fix $a$. Assuming $F(a)\\ne a$, choose $b=F(a)$. The premise then forces $F(a)\\ne F(a)$, which is impossible.",
+    "children": [
+      "identity-forward",
+      "identity-reverse"
+    ],
+    "sources": [],
+    "kind": "explanation"
+  },
+  "identity-forward": {
+    "title": "Why does choosing $b=F(a)$ work?",
+    "body": "The assumption $F(a)\\ne a$ implies $a\\ne F(a)$ by symmetry. Substitute $b=F(a)$ into the universal hypothesis. It yields $F(a)\\ne F(a)$. Contradiction proves $F(a)=a$.",
+    "children": [
+      "neq-symmetry",
+      "forall-use",
+      "self-contradiction",
+      "classical-logic"
+    ],
+    "sources": [],
+    "kind": "explanation"
+  },
+  "neq-symmetry": {
+    "title": "Symmetry of inequality",
+    "body": "If $a=F(a)$, symmetry of equality gives $F(a)=a$, contradicting the assumption. Therefore $a\\ne F(a)$. Lean writes this step as “Ne.symm hx”.",
+    "children": [
+      "equality-rule"
+    ],
+    "sources": [],
+    "kind": "explanation"
+  },
+  "forall-use": {
+    "title": "Instantiating a universally quantified statement",
+    "body": "A proof of $\\forall x\\,y,\\ x\\ne y\\to F(x)\\ne y$ can be applied to $a$, then $F(a)$, then the proof of $a\\ne F(a)$. In Lean this is function application: “h x (f x) (Ne.symm hx)”.",
+    "children": [],
+    "sources": [],
+    "kind": "logical rule"
+  },
+  "self-contradiction": {
+    "title": "Why is $F(a)\\ne F(a)$ impossible?",
+    "body": "The notation $u\\ne v$ means $(u=v)\\to\\mathrm{False}$. Equality reflexivity supplies a proof of $F(a)=F(a)$. Applying the alleged inequality to that proof yields False. This is the “rfl” at the end of the forward Lean proof.",
+    "children": [
+      "equality-rule"
+    ],
+    "sources": [],
+    "kind": "logical rule"
+  },
+  "equality-rule": {
+    "title": "Equality reflexivity and substitution",
+    "body": "Reflexivity states $u=u$. Equality elimination allows replacing an expression by an equal one; symmetry is derived from that rule. These are basic equality principles in Lean’s type theory. This sample ends the explanatory chain here.",
+    "children": [],
+    "sources": [],
+    "kind": "foundation"
+  },
+  "classical-logic": {
+    "title": "The proof uses classical contradiction",
+    "body": "The Lean proof says “by_contra hx”: to prove $F(a)=a$, assume its negation and derive False. The recorded axiom report for this declaration lists propext, Classical.choice and Quot.sound. That is the dependency report for this compiled proof, not a claim that the statement needs all three in every possible proof.",
+    "children": [],
+    "sources": [],
+    "kind": "foundation"
+  },
+  "identity-reverse": {
+    "title": "Why does the identity satisfy the condition?",
+    "body": "Substitute $F(a)=a$. The desired implication becomes $a\\ne b\\Rightarrow a\\ne b$, proved by returning its assumption.",
+    "children": [
+      "equality-rule",
+      "forall-use"
+    ],
+    "sources": [],
+    "kind": "explanation"
+  },
+  "identity-match": {
+    "title": "Does the Lean statement match the paper’s $F=\\mathrm{id}$?",
+    "body": "Lean states the conclusion pointwise: $\\forall a,\\ F(a)=a$. Function extensionality turns this into equality with the identity function, and evaluating a function equality gives the pointwise statement. The theorem needs no finiteness or nonemptiness assumption on $A$. This explanation of the correspondence is authored prose.",
+    "children": [
+      "equality-rule"
+    ],
+    "sources": [
+      "Core:avoidance_iff_identity"
+    ],
+    "kind": "statement correspondence"
+  },
+  "s4-3": {
+    "title": "The allowed pairs are the actual output image",
+    "body": "With exactly the variables $x,y$ and exactly those outputs, the assignment-to-output map is the identity on pairs. The admissibility predicates select a subset of all distinct pairs.",
+    "children": [
+      "allowed-pairs",
+      "pair-count",
+      "image"
+    ],
+    "sources": [],
+    "kind": "explanation"
+  },
+  "allowed-pairs": {
+    "title": "What are the three requirements?",
+    "body": "The coordinates differ, each $F_j(a)$ differs from the second coordinate, and $W(a)$ differs from the first. All are conjunctions evaluated at the same pair. Lean’s “laws” is the indexed family $F_j$, and “w” is $W$.",
+    "children": [
+      "valid"
+    ],
+    "sources": [
+      "Core:Admissible",
+      "Core:codePairs",
+      "Core:codePairs_subset"
+    ],
+    "kind": "explanation"
+  },
+  "s4-4": {
+    "title": "Saturation is equivalent to identities and no fixed points",
+    "body": "The cardinality equality first forces every off-diagonal pair to be allowed. Then Lemma 4.1 forces each identity, and $n\\ge2$ allows the fixed-point test to be checked at every first coordinate.",
+    "children": [
+      "full-subset",
+      "all-laws",
+      "no-fixed",
+      "saturation-match"
+    ],
+    "sources": [
+      "Core:card_saturation_iff_laws"
+    ],
+    "kind": "explanation"
+  },
+  "s4-5": {
+    "title": "Every step of the saturation proof",
+    "body": "The subset and equal-cardinality step yields all distinct pairs. Apply the identity lemma separately to each law, and choose a distinct partner for each point to force the test on $W$. The converse verifies all tests directly.",
+    "children": [
+      "full-subset",
+      "all-laws",
+      "no-fixed",
+      "saturation-converse"
+    ],
+    "sources": [],
+    "kind": "explanation"
+  },
+  "full-subset": {
+    "title": "Why do equal finite sizes force all pairs?",
+    "body": "If a finite subset misses even one element of its containing set, its cardinality is strictly smaller. Since the allowed pairs form a subset and the two counts agree, the sets are equal.",
+    "children": [
+      "allowed-pairs",
+      "finite-count"
+    ],
+    "sources": [
+      "Core:card_saturation_iff"
+    ],
+    "kind": "explanation"
+  },
+  "all-laws": {
+    "title": "Why does this force every $F_j$ to be the identity?",
+    "body": "Fix an index $j$. Every distinct pair is allowed, hence $a\\ne b\\Rightarrow F_j(a)\\ne b$ for all $a,b$. Apply Lemma 4.1 to this single function and then generalise over $j$.",
+    "children": [
+      "identity-forward",
+      "identity-match"
+    ],
+    "sources": [
+      "Core:saturation_iff"
+    ],
+    "kind": "explanation"
+  },
+  "no-fixed": {
+    "title": "Where is the hypothesis $n\\ge2$ used?",
+    "body": "For each $a$, choose some $b\\ne a$. That pair is allowed, so its test on $W$ gives $W(a)\\ne a$. Lean expresses the necessary alphabet condition as “Nontrivial A”. Without it there need not be a distinct partner.",
+    "children": [
+      "full-subset"
+    ],
+    "sources": [
+      "Core:saturation_iff"
+    ],
+    "kind": "explanation"
+  },
+  "saturation-converse": {
+    "title": "Why do the laws imply saturation?",
+    "body": "For any $a\\ne b$, each identity gives $F_j(a)=a\\ne b$, and the fixed-point-free hypothesis gives $W(a)\\ne a$. Thus every off-diagonal pair is admitted and their number is $n(n-1)$.",
+    "children": [
+      "identity-reverse",
+      "pair-count"
+    ],
+    "sources": [
+      "Core:saturation_iff"
+    ],
+    "kind": "explanation"
+  },
+  "saturation-match": {
+    "title": "Matching the cardinalities and hypotheses",
+    "body": "The Lean theorem compares “codePairs” with “guardPairs”; “card_guardPairs” identifies the latter count with $n(n-1)$. The indexed laws are pointwise identities, equivalent to function equality. The finite alphabet and “Nontrivial A” match $n\\ge2$.",
+    "children": [
+      "identity-match",
+      "pair-count",
+      "no-fixed"
+    ],
+    "sources": [
+      "Core:card_saturation_iff_laws",
+      "Core:card_guardPairs"
+    ],
+    "kind": "statement correspondence"
+  },
+  "s4-6": {
+    "title": "Count the lost pairs row by row",
+    "body": "A fixed point of $W$ loses its whole off-diagonal row. Otherwise a row loses exactly the values in $B_a$ other than $a$. Duplicate values among the laws are counted only once.",
+    "children": [
+      "row-count",
+      "defect",
+      "integer-lower"
+    ],
+    "sources": [],
+    "kind": "explanation"
+  },
+  "row-count": {
+    "title": "Why is an allowed row $A\\setminus B_a$?",
+    "body": "When $W(a)\\ne a$, the remaining tests exclude the second-coordinate values $a,F_1(a),\\ldots,F_M(a)$. These form a set, so repetitions do not create additional exclusions. The complement has $n-|B_a|$ elements.",
+    "children": [
+      "allowed-pairs",
+      "finite-count"
+    ],
+    "sources": [
+      "Core:forbiddenRow",
+      "Core:code_card_rows"
+    ],
+    "kind": "explanation"
+  },
+  "defect": {
+    "title": "Deriving the exact deficit",
+    "body": "Start with $n-1$ off-diagonal pairs in each row. If $a\\in Z$, all $n-1$ are lost. If $a\\notin Z$, subtract the allowed count $n-|B_a|$ from $n-1$, leaving $|B_a|-1$. Sum over the two disjoint kinds of row. This algebraic explanation is derived here from the linked row-count identity.",
+    "children": [
+      "row-count",
+      "pair-count"
+    ],
+    "sources": [
+      "Core:code_card_rows"
+    ],
+    "kind": "explanation"
+  },
+  "integer-lower": {
+    "title": "Why is a negative lower bound still valid?",
+    "body": "If $Z$ is empty, each row loses at most $M$ off-diagonal pairs because $1\\le |B_a|\\le M+1$. Total loss is at most $Mn$. The paper uses subtraction in the integers. “code_card_lower” uses natural-number subtraction, which truncates at zero; converting that bound to the displayed integer inequality requires this explicit arithmetic interpretation.",
+    "children": [
+      "defect"
+    ],
+    "sources": [
+      "Core:card_forbiddenRow_le",
+      "Core:code_card_lower"
+    ],
+    "kind": "statement correspondence"
+  },
+  "s4-7": {
+    "title": "Almost all pairs is different from all pairs",
+    "body": "The three-element example loses only $(0,1)$. Once the additional test $F(x)\\ne x$ is imposed, every surviving row must omit a second, distinct value, so each row has at most $n-2$ outputs.",
+    "children": [
+      "five-pairs",
+      "toy-bound",
+      "near-not-exact"
+    ],
+    "sources": [
+      "ToyExample:toy_dispersion"
+    ],
+    "kind": "explanation"
+  },
+  "five-pairs": {
+    "title": "Enumerating the five pairs",
+    "body": "At $a=0$, only $b=2$ is allowed. At $a=1$, both $b=0,2$ are allowed. At $a=2$, both $b=0,1$ are allowed. These are five distinct outputs. Replacing $F(0)$ by $0$ restores the sixth pair $(0,1)$.",
+    "children": [
+      "allowed-pairs"
+    ],
+    "sources": [],
+    "kind": "worked example"
+  },
+  "toy-bound": {
+    "title": "Why is the maximum exactly $n(n-2)$?",
+    "body": "A fixed point contributes no row under the extra test. A moved point excludes two distinct second-coordinate values, $a$ and $F(a)$, and contributes $n-2$. This gives the upper bound. A cyclic shift has no fixed points for $n\\ge2$, so every row attains it.",
+    "children": [
+      "row-count"
+    ],
+    "sources": [
+      "ToyExample:toy_image_card_le",
+      "ToyExample:cyclicShift_ne",
+      "ToyExample:toy_dispersion"
+    ],
+    "kind": "explanation"
+  },
+  "near-not-exact": {
+    "title": "Why can the proportion tend to one without equality?",
+    "body": "For $n\\ge2$, the ratio is $(n-2)/(n-1)=1-1/(n-1)$, which tends to one. The absolute deficit is still $n>0$ for every such $n$. A limiting ratio cannot be substituted for an exact finite equality.",
+    "children": [
+      "limit-boundary"
+    ],
+    "sources": [],
+    "kind": "explanation"
+  }
+}

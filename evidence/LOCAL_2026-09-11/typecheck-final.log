@@ -1,0 +1,4 @@
+
+> term-coding-paper-and-proof@0.1.0 typecheck
+> tsc --noEmit
+

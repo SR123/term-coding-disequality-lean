@@ -1,0 +1,13 @@
+--- revision-015/paper3.tex
++++ revision-016/paper3.tex
+@@ -202,7 +202,9 @@
+ With the same variables, test and number of output coordinates, the
+ tuple $(x_1,\ldots,x_k,x_1)$ instead has exactly $b_k(n)$ outputs.
+ It gives a no answer to the strict question and a yes answer to the
+-non-strict question. Adding $x_1\ne x_1$ makes both answers no.
++non-strict question. Adding the deliberately impossible test $x_1\ne x_1$
++excludes every assignment and gives $D_\Gamma(n)=0$, so both questions
++have answer ``no''.
+ For $k=2$, the first two examples are $(x,y,z)$ with
+ $D(n)=n^2(n-1)$ and $(x,y,x)$ with $D(n)=n(n-1)$.
+ \end{example}

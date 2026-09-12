@@ -1,0 +1,10 @@
+MLib.lean:487:48: warning: unused variable `hSRC`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+
+MLib.lean:1611:46: warning: unused variable `hN`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+
+ELABORATED MLib; exporting proof states
+EXPORTED MLib: 77689 info records

@@ -1,0 +1,220 @@
+name = "DisequalityThreshold"
+defaultTargets = ["Core", "Threshold", "PresentationBridge", "Semantics", "Tagged", "CompilerBridge", "Examples", "BuildList", "EncodedSyntax", "StrictAlgorithm", "EncodedExamples", "Transport", "EncodedCompiler", "EncodedComputable", "CompilerExamples", "EncodingCost", "FiniteSearch", "Semidecision", "Asymptotics", "Density", "ToyExample", "Flattening", "ReducedWords", "FinalInterface", "GeneralSemantics", "TermGraph", "SharpCut", "GeneralRouting", "DegreeThreshold", "Padding", "GeneralEncoded", "DegreeCompiler", "MengerTheorem", "TermMenger", "TableSearch", "TableSearchComputable", "GeneralSemidecision", "GeneralAsymptotics", "GeneralExamples", "GeneralAlgorithm", "GeneralComputable", "GeneralInterface", "TupleFlattening", "WitnessSize", "UnitFlow", "UnitFlowCost", "FlowCut", "FlowCost", "Parsing", "ParsingCost", "CostMonad", "ParsingExec", "UnitFlowExec", "PhaseAExec", "FlowCutExec", "FlowExamples", "Ram", "Machine", "MachineLib", "MParse", "MParseList", "MParseRec", "MLib", "MLib2", "MLib3", "MValid", "MCanon", "MNet", "MFlow", "MMain", "MExamples"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4.git"
+rev = "v4.26.0"
+
+[[lean_lib]]
+name = "Core"
+
+[[lean_lib]]
+name = "Threshold"
+
+[[lean_lib]]
+name = "PresentationBridge"
+
+[[lean_lib]]
+name = "Semantics"
+
+[[lean_lib]]
+name = "Tagged"
+
+[[lean_lib]]
+name = "CompilerBridge"
+
+[[lean_lib]]
+name = "Examples"
+
+[[lean_lib]]
+name = "BuildList"
+
+[[lean_lib]]
+name = "EncodedSyntax"
+
+[[lean_lib]]
+name = "StrictAlgorithm"
+
+[[lean_lib]]
+name = "EncodedExamples"
+
+[[lean_lib]]
+name = "Transport"
+
+[[lean_lib]]
+name = "EncodedCompiler"
+
+[[lean_lib]]
+name = "EncodedComputable"
+
+[[lean_lib]]
+name = "CompilerExamples"
+
+[[lean_lib]]
+name = "EncodingCost"
+
+[[lean_lib]]
+name = "FiniteSearch"
+
+[[lean_lib]]
+name = "Semidecision"
+
+[[lean_lib]]
+name = "Asymptotics"
+
+[[lean_lib]]
+name = "Density"
+
+[[lean_lib]]
+name = "ToyExample"
+
+[[lean_lib]]
+name = "Flattening"
+
+[[lean_lib]]
+name = "ReducedWords"
+
+[[lean_lib]]
+name = "FinalInterface"
+
+[[lean_lib]]
+name = "GeneralSemantics"
+
+[[lean_lib]]
+name = "TermGraph"
+
+[[lean_lib]]
+name = "SharpCut"
+
+[[lean_lib]]
+name = "GeneralRouting"
+
+[[lean_lib]]
+name = "DegreeThreshold"
+
+[[lean_lib]]
+name = "Padding"
+
+[[lean_lib]]
+name = "GeneralEncoded"
+
+[[lean_lib]]
+name = "DegreeCompiler"
+
+[[lean_lib]]
+name = "MengerTheorem"
+
+[[lean_lib]]
+name = "TermMenger"
+
+[[lean_lib]]
+name = "TableSearch"
+
+[[lean_lib]]
+name = "TableSearchComputable"
+
+[[lean_lib]]
+name = "GeneralSemidecision"
+
+[[lean_lib]]
+name = "GeneralAsymptotics"
+
+[[lean_lib]]
+name = "GeneralExamples"
+
+[[lean_lib]]
+name = "GeneralAlgorithm"
+
+[[lean_lib]]
+name = "GeneralComputable"
+
+[[lean_lib]]
+name = "GeneralInterface"
+
+[[lean_lib]]
+name = "TupleFlattening"
+
+[[lean_lib]]
+name = "WitnessSize"
+
+[[lean_lib]]
+name = "UnitFlow"
+
+[[lean_lib]]
+name = "UnitFlowCost"
+
+[[lean_lib]]
+name = "FlowCut"
+
+[[lean_lib]]
+name = "FlowCost"
+
+[[lean_lib]]
+name = "Parsing"
+
+[[lean_lib]]
+name = "ParsingCost"
+
+[[lean_lib]]
+name = "CostMonad"
+
+[[lean_lib]]
+name = "ParsingExec"
+
+[[lean_lib]]
+name = "UnitFlowExec"
+
+[[lean_lib]]
+name = "FlowCutExec"
+
+[[lean_lib]]
+name = "FlowExamples"
+
+[[lean_lib]]
+name = "PhaseAExec"
+
+[[lean_lib]]
+name = "Ram"
+
+[[lean_lib]]
+name = "Machine"
+
+[[lean_lib]]
+name = "MachineLib"
+
+[[lean_lib]]
+name = "MParse"
+
+[[lean_lib]]
+name = "MParseList"
+
+[[lean_lib]]
+name = "MParseRec"
+
+[[lean_lib]]
+name = "MLib"
+
+[[lean_lib]]
+name = "MLib2"
+
+[[lean_lib]]
+name = "MLib3"
+
+[[lean_lib]]
+name = "MValid"
+
+[[lean_lib]]
+name = "MCanon"
+
+[[lean_lib]]
+name = "MNet"
+
+[[lean_lib]]
+name = "MFlow"
+
+[[lean_lib]]
+name = "MMain"
+
+[[lean_lib]]
+name = "MExamples"

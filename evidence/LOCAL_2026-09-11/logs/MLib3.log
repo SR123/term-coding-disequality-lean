@@ -1,0 +1,26 @@
+MLib3.lean:197:61: warning: This simp argument is unused:
+  rangeV
+
+Hint: Omit it from the simp argument list.
+  simp only [List.mem_append, List.mem_cons,̵ ̵r̵a̵n̵g̵e̵V̵] at hx ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MLib3.lean:360:54: warning: unused variable `hDA`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+
+MLib3.lean:360:68: warning: unused variable `hDI`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+
+MLib3.lean:387:54: warning: unused variable `hDQ`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+
+MLib3.lean:409:54: warning: unused variable `hDQ`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+
+ELABORATED MLib3; exporting proof states
+EXPORTED MLib3: 14063 info records

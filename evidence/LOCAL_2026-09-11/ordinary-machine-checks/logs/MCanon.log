@@ -1,0 +1,16 @@
+MCanon.lean:1287:57: warning: This simp argument is unused:
+  if_false
+
+Hint: Omit it from the simp argument list.
+  simp only [↓reduceIte, Nat.one_ne_zero,̵ ̵i̵f̵_̵f̵a̵l̵s̵e̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+MCanon.lean:1529:34: warning: unused variable `m`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+MCanon.lean:1529:36: warning: unused variable `m₁`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+MCanon.lean:1532:78: warning: unused variable `m`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`

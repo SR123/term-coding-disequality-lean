@@ -1,0 +1,16 @@
+{
+  "revision": 16,
+  "onlyChange": "Clarification of the impossible test in Example 1.2",
+  "previousSha256": "703c52525acd27af3b3ac245d6ce3db47b8f20bd6529609f26e520119e750be3",
+  "manuscriptSha256": "4250c995151a6acda486c8f00af941cf6bf0c14c3b7a8fa73cb40140cbdc7000",
+  "leanSourceChanged": false,
+  "proofExportsChanged": false,
+  "abstractUnchanged": true,
+  "mathematicalEnvironments": 21,
+  "unchangedEnvironments": 20,
+  "changedEnvironment": "Example 1.2: explanatory wording only",
+  "pdfPages": 15,
+  "pdfVisualReview": "All 15 pages and an enlarged view of page 3 checked; no layout defects.",
+  "latexUndefinedReferences": false,
+  "latexOverfullBoxes": false
+}

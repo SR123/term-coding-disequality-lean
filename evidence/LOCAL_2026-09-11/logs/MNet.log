@@ -1,0 +1,42 @@
+MNet.lean:624:50: warning: unused variable `hPd`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+
+MNet.lean:656:15: warning: unused variable `x`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+
+MNet.lean:656:39: warning: unused variable `m`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+
+MNet.lean:662:60: warning: unused variable `m`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+
+MNet.lean:662:62: warning: unused variable `m'`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+
+MNet.lean:666:6: warning: unused variable `m`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+
+MNet.lean:666:8: warning: unused variable `m'`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+
+MNet.lean:1281:8: warning: unused variable `m'`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+
+MNet.lean:1872:15: warning: unused variable `x`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+
+MNet.lean:1872:39: warning: unused variable `m`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+
+ELABORATED MNet; exporting proof states
+EXPORTED MNet: 102139 info records

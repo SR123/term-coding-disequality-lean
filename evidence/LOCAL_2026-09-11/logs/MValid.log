@@ -1,0 +1,816 @@
+MValid.lean:305:55: warning: This simp argument is unused:
+  KV
+
+Hint: Omit it from the simp argument list.
+  simp +decide [K̵V̵,̵ ̵G_, BASE, OUTS, SRCS]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:305:59: warning: This simp argument is unused:
+  G_
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G̵_̵,̵ ̵BASE, OUTS, SRCS]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:305:63: warning: This simp argument is unused:
+  BASE
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, B̵A̵S̵E̵,̵ ̵OUTS, SRCS]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:305:69: warning: This simp argument is unused:
+  OUTS
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, O̵U̵T̵S,̵ ̵S̵RCS]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:305:75: warning: This simp argument is unused:
+  SRCS
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS,̵ ̵S̵R̵C̵S̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:307:55: warning: This simp argument is unused:
+  KV
+
+Hint: Omit it from the simp argument list.
+  simp +decide [K̵V̵,̵ ̵G_, BASE, OUTS, SRCS, SYMS]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:307:59: warning: This simp argument is unused:
+  G_
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G̵_̵,̵ ̵BASE, OUTS, SRCS, SYMS]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:307:63: warning: This simp argument is unused:
+  BASE
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, B̵A̵S̵E̵,̵ ̵OUTS, SRCS, SYMS]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:307:69: warning: This simp argument is unused:
+  OUTS
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, O̵U̵T̵S,̵ ̵S̵RCS, SYMS]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:307:75: warning: This simp argument is unused:
+  SRCS
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SR̵C̵S̵,̵ ̵S̵YMS]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:307:81: warning: This simp argument is unused:
+  SYMS
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SRCS,̵ ̵S̵Y̵M̵S̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:309:56: warning: This simp argument is unused:
+  KV
+
+Hint: Omit it from the simp argument list.
+  simp +decide [K̵V̵,̵ ̵G_, BASE, OUTS, SRCS, SYMS, NODES]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:309:60: warning: This simp argument is unused:
+  G_
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G̵_̵,̵ ̵BASE, OUTS, SRCS, SYMS, NODES]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:309:64: warning: This simp argument is unused:
+  BASE
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, B̵A̵S̵E̵,̵ ̵OUTS, SRCS, SYMS, NODES]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:309:70: warning: This simp argument is unused:
+  OUTS
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, O̵U̵T̵S,̵ ̵S̵RCS, SYMS, NODES]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:309:76: warning: This simp argument is unused:
+  SRCS
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SR̵C̵S̵,̵ ̵S̵YMS, NODES]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:309:82: warning: This simp argument is unused:
+  SYMS
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SRCS, S̵Y̵M̵S̵,̵ ̵NODES]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:309:88: warning: This simp argument is unused:
+  NODES
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SRCS, SYMS,̵ ̵N̵O̵D̵E̵S̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:311:53: warning: This simp argument is unused:
+  KV
+
+Hint: Omit it from the simp argument list.
+  simp +decide [K̵V̵,̵ ̵G_, BASE, OUTS, SRCS, SYMS, NODES, XV]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:311:57: warning: This simp argument is unused:
+  G_
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G̵_̵,̵ ̵BASE, OUTS, SRCS, SYMS, NODES, XV]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:311:61: warning: This simp argument is unused:
+  BASE
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, B̵A̵S̵E̵,̵ ̵OUTS, SRCS, SYMS, NODES, XV]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:311:67: warning: This simp argument is unused:
+  OUTS
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, O̵U̵T̵S,̵ ̵S̵RCS, SYMS, NODES, XV]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:311:73: warning: This simp argument is unused:
+  SRCS
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SR̵C̵S̵,̵ ̵S̵YMS, NODES, XV]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:311:79: warning: This simp argument is unused:
+  SYMS
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SRCS, S̵Y̵M̵S̵,̵ ̵NODES, XV]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:311:85: warning: This simp argument is unused:
+  NODES
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SRCS, SYMS, N̵O̵D̵E̵S̵,̵ ̵XV]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:311:92: warning: This simp argument is unused:
+  XV
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SRCS, SYMS, NODES,̵ ̵X̵V̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:312:53: warning: This simp argument is unused:
+  KV
+
+Hint: Omit it from the simp argument list.
+  simp +decide [K̵V̵,̵ ̵G_, BASE, OUTS, SRCS, SYMS, NODES, XV, YV]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:312:57: warning: This simp argument is unused:
+  G_
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G̵_̵,̵ ̵BASE, OUTS, SRCS, SYMS, NODES, XV, YV]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:312:61: warning: This simp argument is unused:
+  BASE
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, B̵A̵S̵E̵,̵ ̵OUTS, SRCS, SYMS, NODES, XV, YV]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:312:67: warning: This simp argument is unused:
+  OUTS
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, O̵U̵T̵S,̵ ̵S̵RCS, SYMS, NODES, XV, YV]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:312:73: warning: This simp argument is unused:
+  SRCS
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SR̵C̵S̵,̵ ̵S̵YMS, NODES, XV, YV]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:312:79: warning: This simp argument is unused:
+  SYMS
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SRCS, S̵Y̵M̵S̵,̵ ̵NODES, XV, YV]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:312:85: warning: This simp argument is unused:
+  NODES
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SRCS, SYMS, N̵O̵D̵E̵S̵,̵ ̵XV, YV]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:312:92: warning: This simp argument is unused:
+  XV
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SRCS, SYMS, NODES, X̵V̵,̵ ̵YV]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:312:96: warning: This simp argument is unused:
+  YV
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SRCS, SYMS, NODES, XV,̵ ̵Y̵V̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:313:53: warning: This simp argument is unused:
+  KV
+
+Hint: Omit it from the simp argument list.
+  simp +decide [K̵V̵,̵ ̵G_, BASE, OUTS, SRCS, SYMS, NODES, XV, YV, TV]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:313:57: warning: This simp argument is unused:
+  G_
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G̵_̵,̵ ̵BASE, OUTS, SRCS, SYMS, NODES, XV, YV, TV]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:313:61: warning: This simp argument is unused:
+  BASE
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, B̵A̵S̵E̵,̵ ̵OUTS, SRCS, SYMS, NODES, XV, YV, TV]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:313:67: warning: This simp argument is unused:
+  OUTS
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, O̵U̵T̵S,̵ ̵S̵RCS, SYMS, NODES, XV, YV, TV]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:313:73: warning: This simp argument is unused:
+  SRCS
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SR̵C̵S̵,̵ ̵S̵YMS, NODES, XV, YV, TV]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:313:79: warning: This simp argument is unused:
+  SYMS
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SRCS, S̵Y̵M̵S̵,̵ ̵NODES, XV, YV, TV]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:313:85: warning: This simp argument is unused:
+  NODES
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SRCS, SYMS, N̵O̵D̵E̵S̵,̵ ̵XV, YV, TV]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:313:92: warning: This simp argument is unused:
+  XV
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SRCS, SYMS, NODES, X̵V̵,̵ ̵YV, TV]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:313:96: warning: This simp argument is unused:
+  YV
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SRCS, SYMS, NODES, XV, Y̵V̵,̵ ̵TV]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:313:100: warning: This simp argument is unused:
+  TV
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SRCS, SYMS, NODES, XV, YV,̵ ̵T̵V̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:315:18: warning: This simp argument is unused:
+  KV
+
+Hint: Omit it from the simp argument list.
+  simp +decide [K̵V̵,̵ ̵G_, BASE, OUTS, SRCS, SYMS, NODES, XV, YV, TV, TESTS]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:315:22: warning: This simp argument is unused:
+  G_
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G̵_̵,̵ ̵BASE, OUTS, SRCS, SYMS, NODES, XV, YV, TV, TESTS]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:315:26: warning: This simp argument is unused:
+  BASE
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, B̵A̵S̵E̵,̵ ̵OUTS, SRCS, SYMS, NODES, XV, YV, TV, TESTS]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:315:32: warning: This simp argument is unused:
+  OUTS
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, O̵U̵T̵S,̵ ̵S̵RCS, SYMS, NODES, XV, YV, TV, TESTS]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:315:38: warning: This simp argument is unused:
+  SRCS
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SR̵C̵S̵,̵ ̵S̵YMS, NODES, XV, YV, TV, TESTS]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:315:44: warning: This simp argument is unused:
+  SYMS
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SRCS, S̵Y̵M̵S̵,̵ ̵NODES, XV, YV, TV, TESTS]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:315:50: warning: This simp argument is unused:
+  NODES
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SRCS, SYMS, N̵O̵D̵E̵S̵,̵ ̵XV, YV, TV, TESTS]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:315:57: warning: This simp argument is unused:
+  XV
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SRCS, SYMS, NODES, X̵V̵,̵ ̵YV, TV, TESTS]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:315:61: warning: This simp argument is unused:
+  YV
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SRCS, SYMS, NODES, XV, Y̵V̵,̵ ̵TV, TESTS]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:315:65: warning: This simp argument is unused:
+  TV
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SRCS, SYMS, NODES, XV, YV, TV̵,̵ ̵T̵ESTS]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:315:69: warning: This simp argument is unused:
+  TESTS
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SRCS, SYMS, NODES, XV, YV, TV,̵ ̵T̵E̵S̵T̵S̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:317:55: warning: This simp argument is unused:
+  KV
+
+Hint: Omit it from the simp argument list.
+  simp +decide [K̵V̵,̵ ̵G_, BASE, OUTS]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:317:59: warning: This simp argument is unused:
+  G_
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G̵_̵,̵ ̵BASE, OUTS]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:317:63: warning: This simp argument is unused:
+  BASE
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, B̵A̵S̵E̵,̵ ̵OUTS]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:317:69: warning: This simp argument is unused:
+  OUTS
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE,̵ ̵O̵U̵T̵S̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:320:18: warning: This simp argument is unused:
+  KV
+
+Hint: Omit it from the simp argument list.
+  simp +decide [K̵V̵,̵ ̵G_, BASE, OUTS, SRCS, SYMS, NODES, XV, YV, TV, TESTS, NN]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:320:22: warning: This simp argument is unused:
+  G_
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G̵_̵,̵ ̵BASE, OUTS, SRCS, SYMS, NODES, XV, YV, TV, TESTS, NN]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:320:26: warning: This simp argument is unused:
+  BASE
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, B̵A̵S̵E̵,̵ ̵OUTS, SRCS, SYMS, NODES, XV, YV, TV, TESTS, NN]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:320:32: warning: This simp argument is unused:
+  OUTS
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, O̵U̵T̵S,̵ ̵S̵RCS, SYMS, NODES, XV, YV, TV, TESTS, NN]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:320:38: warning: This simp argument is unused:
+  SRCS
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SR̵C̵S̵,̵ ̵S̵YMS, NODES, XV, YV, TV, TESTS, NN]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:320:44: warning: This simp argument is unused:
+  SYMS
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SRCS, S̵Y̵M̵S̵,̵ ̵NODES, XV, YV, TV, TESTS, NN]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:320:50: warning: This simp argument is unused:
+  NODES
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SRCS, SYMS, N̵O̵D̵E̵S̵,̵ ̵XV, YV, TV, TESTS, NN]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:320:57: warning: This simp argument is unused:
+  XV
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SRCS, SYMS, NODES, X̵V̵,̵ ̵YV, TV, TESTS, NN]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:320:61: warning: This simp argument is unused:
+  YV
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SRCS, SYMS, NODES, XV, Y̵V̵,̵ ̵TV, TESTS, NN]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:320:65: warning: This simp argument is unused:
+  TV
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SRCS, SYMS, NODES, XV, YV, TV̵,̵ ̵T̵ESTS, NN]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:320:69: warning: This simp argument is unused:
+  TESTS
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SRCS, SYMS, NODES, XV, YV, TV, T̵E̵S̵T̵S̵,̵ ̵NN]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:320:76: warning: This simp argument is unused:
+  NN
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SRCS, SYMS, NODES, XV, YV, TV, TESTS,̵ ̵N̵N̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:323:18: warning: This simp argument is unused:
+  KV
+
+Hint: Omit it from the simp argument list.
+  simp +decide [K̵V̵,̵ ̵G_, BASE, OUTS, SRCS, SYMS, NODES, XV, YV, TV, TESTS, NN, KK]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:323:22: warning: This simp argument is unused:
+  G_
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G̵_̵,̵ ̵BASE, OUTS, SRCS, SYMS, NODES, XV, YV, TV, TESTS, NN, KK]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:323:26: warning: This simp argument is unused:
+  BASE
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, B̵A̵S̵E̵,̵ ̵OUTS, SRCS, SYMS, NODES, XV, YV, TV, TESTS, NN, KK]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:323:32: warning: This simp argument is unused:
+  OUTS
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, O̵U̵T̵S,̵ ̵S̵RCS, SYMS, NODES, XV, YV, TV, TESTS, NN, KK]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:323:38: warning: This simp argument is unused:
+  SRCS
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SR̵C̵S̵,̵ ̵S̵YMS, NODES, XV, YV, TV, TESTS, NN, KK]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:323:44: warning: This simp argument is unused:
+  SYMS
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SRCS, S̵Y̵M̵S̵,̵ ̵NODES, XV, YV, TV, TESTS, NN, KK]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:323:50: warning: This simp argument is unused:
+  NODES
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SRCS, SYMS, N̵O̵D̵E̵S̵,̵ ̵XV, YV, TV, TESTS, NN, KK]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:323:57: warning: This simp argument is unused:
+  XV
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SRCS, SYMS, NODES, X̵V̵,̵ ̵YV, TV, TESTS, NN, KK]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:323:61: warning: This simp argument is unused:
+  YV
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SRCS, SYMS, NODES, XV, Y̵V̵,̵ ̵TV, TESTS, NN, KK]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:323:65: warning: This simp argument is unused:
+  TV
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SRCS, SYMS, NODES, XV, YV, TV̵,̵ ̵T̵ESTS, NN, KK]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:323:69: warning: This simp argument is unused:
+  TESTS
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SRCS, SYMS, NODES, XV, YV, TV, T̵E̵S̵T̵S̵,̵ ̵NN, KK]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:323:76: warning: This simp argument is unused:
+  NN
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SRCS, SYMS, NODES, XV, YV, TV, TESTS, N̵N̵,̵ ̵KK]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:323:80: warning: This simp argument is unused:
+  KK
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SRCS, SYMS, NODES, XV, YV, TV, TESTS, NN,̵ ̵K̵K̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:326:18: warning: This simp argument is unused:
+  KV
+
+Hint: Omit it from the simp argument list.
+  simp +decide [K̵V̵,̵ ̵G_, BASE, OUTS, SRCS, SYMS, NODES, XV, YV, TV, TESTS, NN, KK, MM]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:326:22: warning: This simp argument is unused:
+  G_
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G̵_̵,̵ ̵BASE, OUTS, SRCS, SYMS, NODES, XV, YV, TV, TESTS, NN, KK, MM]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:326:26: warning: This simp argument is unused:
+  BASE
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, B̵A̵S̵E̵,̵ ̵OUTS, SRCS, SYMS, NODES, XV, YV, TV, TESTS, NN, KK, MM]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:326:32: warning: This simp argument is unused:
+  OUTS
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, O̵U̵T̵S,̵ ̵S̵RCS, SYMS, NODES, XV, YV, TV, TESTS, NN, KK, MM]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:326:38: warning: This simp argument is unused:
+  SRCS
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SR̵C̵S̵,̵ ̵S̵YMS, NODES, XV, YV, TV, TESTS, NN, KK, MM]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:326:44: warning: This simp argument is unused:
+  SYMS
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SRCS, S̵Y̵M̵S̵,̵ ̵NODES, XV, YV, TV, TESTS, NN, KK, MM]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:326:50: warning: This simp argument is unused:
+  NODES
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SRCS, SYMS, N̵O̵D̵E̵S̵,̵ ̵XV, YV, TV, TESTS, NN, KK, MM]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:326:57: warning: This simp argument is unused:
+  XV
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SRCS, SYMS, NODES, X̵V̵,̵ ̵YV, TV, TESTS, NN, KK, MM]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:326:61: warning: This simp argument is unused:
+  YV
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SRCS, SYMS, NODES, XV, Y̵V̵,̵ ̵TV, TESTS, NN, KK, MM]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:326:65: warning: This simp argument is unused:
+  TV
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SRCS, SYMS, NODES, XV, YV, TV̵,̵ ̵T̵ESTS, NN, KK, MM]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:326:69: warning: This simp argument is unused:
+  TESTS
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SRCS, SYMS, NODES, XV, YV, TV, T̵E̵S̵T̵S̵,̵ ̵NN, KK, MM]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:326:76: warning: This simp argument is unused:
+  NN
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SRCS, SYMS, NODES, XV, YV, TV, TESTS, N̵N̵,̵ ̵KK, MM]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:326:80: warning: This simp argument is unused:
+  KK
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SRCS, SYMS, NODES, XV, YV, TV, TESTS, NN, K̵K̵,̵ ̵MM]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:326:84: warning: This simp argument is unused:
+  MM
+
+Hint: Omit it from the simp argument list.
+  simp +decide [KV, G_, BASE, OUTS, SRCS, SYMS, NODES, XV, YV, TV, TESTS, NN, KK,̵ ̵M̵M̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:737:106: warning: This simp argument is unused:
+  hx0
+
+Hint: Omit it from the simp argument list.
+  simp only [Q, hag.var (G_ 1) (by addr3) (by addr3) (by simp [G_]), hG1, hp.1, hG2,
+  ̲  ̲ ̲ ̲ ̲ ̲(hptr m hpre).2.2, hx0̵,̵ ̵h̵x̵1]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:737:111: warning: This simp argument is unused:
+  hx1
+
+Hint: Omit it from the simp argument list.
+  simp only [Q, hag.var (G_ 1) (by addr3) (by addr3) (by simp [G_]), hG1, hp.1, hG2,
+  ̲  ̲ ̲ ̲ ̲ ̲(hptr m hpre).2.2, hx0,̵ ̵h̵x̵1̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+MValid.lean:1763:50: warning: unused variable `m`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+
+ELABORATED MValid; exporting proof states
+EXPORTED MValid: 77230 info records

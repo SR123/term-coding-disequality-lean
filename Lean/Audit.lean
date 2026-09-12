@@ -1,0 +1,95 @@
+import Core
+import Threshold
+import PresentationBridge
+import Semantics
+import Tagged
+import CompilerBridge
+import Examples
+
+#print axioms DisequalityDispersion.avoidance_iff_identity
+#print axioms DisequalityDispersion.saturation_iff
+#print axioms DisequalityDispersion.card_guardPairs
+#print axioms DisequalityDispersion.codePairs_subset
+#print axioms DisequalityDispersion.card_saturation_iff
+#print axioms DisequalityDispersion.card_saturation_iff_laws
+#print axioms DisequalityDispersion.card_forbiddenRow_le
+#print axioms DisequalityDispersion.code_card_rows
+#print axioms DisequalityDispersion.code_card_lower
+#print axioms DisequalityDispersion.evalWord_shift
+#print axioms DisequalityDispersion.shift_word_fixedPointFree
+#print axioms DisequalityDispersion.evalWord_mul_left
+#print axioms DisequalityDispersion.evalWord_perm
+#print axioms DisequalityDispersion.compiled_card_saturation_iff
+#print axioms DisequalityDispersion.compiledPerfect_iff
+#print axioms DisequalityDispersion.signedTables_perm
+#print axioms DisequalityDispersion.compiledPerfect_to_group
+#print axioms DisequalityDispersion.group_to_compiledPerfect
+#print axioms DisequalityDispersion.finite_semantic_reduction
+#print axioms DisequalityDispersion.finite_cardinality_iff_perfect
+#print axioms DisequalityDispersion.finite_cardinality_reduction
+#print axioms DisequalityDispersion.undecidable_perfection_of_group_separation
+#print axioms DisequalityDispersion.Term.eval_congr_on_uses
+#print axioms DisequalityDispersion.card_append_determined
+#print axioms DisequalityDispersion.card_retained_pair_le
+#print axioms DisequalityDispersion.card_retained_term_le
+#print axioms DisequalityDispersion.compiledTriple_card
+#print axioms DisequalityDispersion.tripleMax_ge_iff
+#print axioms DisequalityDispersion.cubic_witness_arithmetic
+#print axioms DisequalityDispersion.groupWord_map
+#print axioms DisequalityDispersion.lift_freeWord
+#print axioms DisequalityDispersion.presentedWord_eq
+#print axioms DisequalityDispersion.presented_relator
+#print axioms DisequalityDispersion.finite_model_iff_presentation_hom
+#print axioms DisequalityDispersion.finite_hom_iff_quotient
+#print axioms DisequalityDispersion.finite_model_iff_quotient
+#print axioms DisequalityDispersion.finite_cardinality_iff_quotient
+#print axioms DisequalityDispersion.undecidable_perfection_of_quotient_separation
+#print axioms DisequalityDispersion.image_le_dispersion
+#print axioms DisequalityDispersion.threshold_iff_interpretation
+#print axioms DisequalityDispersion.identical_test_zero
+#print axioms DisequalityDispersion.retained_term_dispersion_le
+#print axioms DisequalityDispersion.eval_extend
+#print axioms DisequalityDispersion.filtered_image_embedding_le
+#print axioms DisequalityDispersion.dispersion_embedding_le
+#print axioms DisequalityDispersion.eval_tag
+#print axioms DisequalityDispersion.eval_tagged_payload
+#print axioms DisequalityDispersion.distinct_terms_pass
+#print axioms DisequalityDispersion.tagged_triple_separates
+#print axioms DisequalityDispersion.embed_clamp
+#print axioms DisequalityDispersion.finite_eval_embed
+#print axioms DisequalityDispersion.finite_distinct_terms_pass
+#print axioms DisequalityDispersion.card_tagAlphabet
+#print axioms DisequalityDispersion.finite_eval_payload
+#print axioms DisequalityDispersion.finite_tagged_image_lower
+#print axioms DisequalityDispersion.Term.mem_support_self
+#print axioms DisequalityDispersion.Term.support_closed
+#print axioms DisequalityDispersion.SubtermClosed.union
+#print axioms DisequalityDispersion.instanceSupport_closed
+#print axioms DisequalityDispersion.source_mem_instanceSupport
+#print axioms DisequalityDispersion.output_mem_instanceSupport
+#print axioms DisequalityDispersion.tests_mem_instanceSupport
+#print axioms DisequalityDispersion.cubic_on_tagAlphabet
+#print axioms DisequalityDispersion.instanceSupport_card_two
+#print axioms DisequalityDispersion.cubic_lower_bound
+#print axioms DisequalityDispersion.strict_threshold_iff
+#print axioms DisequalityDispersion.eval_wordTerm
+#print axioms DisequalityDispersion.valid_compiler_iff
+#print axioms DisequalityDispersion.compiler_image_eq
+#print axioms DisequalityDispersion.all_unary_interpretations
+#print axioms DisequalityDispersion.compiler_dispersion_saturation_iff
+#print axioms DisequalityDispersion.compiler_has_guard
+#print axioms DisequalityDispersion.hard_threshold_iff_cardinality
+#print axioms DisequalityDispersion.hard_threshold_iff_quotient
+#print axioms DisequalityDispersion.undecidable_hard_threshold
+#print axioms DisequalityDispersion.valid_pairGuard
+#print axioms DisequalityDispersion.identity_triple_image
+#print axioms DisequalityDispersion.identity_triple_image_card
+#print axioms DisequalityDispersion.identity_triple_dispersion
+#print axioms DisequalityDispersion.repeated_triple_image
+#print axioms DisequalityDispersion.repeated_triple_dispersion
+#print axioms DisequalityDispersion.strict_positive_example
+#print axioms DisequalityDispersion.strict_negative_example
+
+#check DisequalityDispersion.strict_threshold_iff
+#check DisequalityDispersion.cubic_lower_bound
+#check DisequalityDispersion.undecidable_hard_threshold
