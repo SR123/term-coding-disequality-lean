@@ -14,6 +14,7 @@ const previewImage = {
 export const metadata: Metadata = {
   icons: { icon: './favicon.svg' },
   title: 'Term coding — paper and formal proof',
+  authors: [{ name: 'Søren Riis', url: 'https://webspace.eecs.qmul.ac.uk/s.riis/' }],
   description: 'Søren Riis: One Unit Separates Polynomial Time from Undecidability in Term Coding. An interactive paper and Lean proof companion.',
   alternates: { canonical: paperUrl },
   openGraph: {
